@@ -1,0 +1,156 @@
+@import url('reset.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  line-height: 1.6;
+}
+
+.wrapper {
+  background-color: #d5bca6;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ======導覽列====== */
+nav {
+  width: 1200px;
+  background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
+  color: #ffffff;
+  font-size: 0;
+  height: 80px;
+  position: fixed; /*導覽列跟著視窗滑動*/
+  z-index: 1; /*讓banner不蓋住nav*/
+}
+
+.nav_logo {
+  position: absolute;
+  top: 11px;
+  margin-left: 65px;
+}
+
+nav .nav_logo img {
+  height: 58px;
+}
+
+nav .content {
+  line-height: 80px; /*設定與nav高度一樣讓文字垂直置中*/
+}
+
+nav ul {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul .buy {
+  /* display: block; 有吃到父層flex屬性所以不用再設block寫寬高*/
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 282px;
+  height: 141px; /*高度為原來一半才會半圓*/
+  text-align: center;
+  border-radius: 0 0 141px 141px; /*設定下半圓*/
+  box-shadow: 0 15px 15px rgba(255, 255, 255, 0.5); /*陰影設定垂直位移15px,擴散15px,顏色及透明度*/
+  background-image: radial-gradient(
+    circle /* 90deg, */ 141px at 141px 0,
+    #bc21c1 0%,
+    #bc21c1 55%,
+    #3f0041 100%
+  );
+  animation: shine 2s linear infinite; /*設置動畫*/
+}
+
+@keyframes shine {
+  /*啟用動畫*/
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.banner {
+  height: 600px;
+  overflow: hidden; /*超出上面設定高度隱藏*/
+  position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
+}
+
+.banner img {
+  display: block;
+  width: 1200px;
+  position: absolute; /*設絕對定位再用座標設定顯示位置*/
+  top: -55px;
+}
+
+/* ======電影時刻顯示區塊====== */
+main {
+  width: 1036px;
+  margin: 0 auto;
+}
+
+main .select {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+main .select .btn_now {
+  width: 125px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 52.5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent; /*在hover前藏住底線*/
+}
+
+main .select .btn_now:hover {
+  transition: border-bottom 0.3s;
+  text-shadow: 0 3px 6px #000000;
+  border-bottom: 2px solid #e7008c; /*顯示被藏住的底線*/
+}
+
+main .select .coming_soon {
+  width: 125px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 52.5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+main .select .coming_soon:hover {
+  transition: border-bottom 0.3s;
+  text-shadow: 0 3px 6px #000000;
+  border-bottom: 2px solid #e7008c;
+}
+
+main ul {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+main ul li {
+  width: 261px;
+}

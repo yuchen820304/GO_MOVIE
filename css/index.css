@@ -88,6 +88,10 @@ ul .buy {
   }
 }
 
+ul .buy:hover {
+  filter: brightness(1.2);
+}
+
 .banner {
   height: 600px;
   overflow: hidden; /*超出上面設定高度隱藏*/
@@ -169,6 +173,15 @@ ul .show {
 }
 
 li .to_buy {
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 18px;
   display: none; /*在hover前先隱藏*/
   position: absolute; /*按鈕定位在海報中*/
   top: 250px;
@@ -176,46 +189,28 @@ li .to_buy {
 }
 
 li .information {
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 18px;
   display: none; /*在hover前先隱藏*/
   position: absolute; /*按鈕定位在海報中*/
   top: 310px;
   left: 50px;
 }
 
-li .information input[type='button'] {
-  width: 170px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-size: 18px;
-  /* font-weight: bold; */
-  cursor: pointer; /*移到button讓滑鼠變成手指*/
-  outline: none; /*取消點擊後出現框線的效果*/
-}
-
-li .to_buy input[type='button'] {
-  width: 170px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-size: 18px;
-  /* font-weight: bold; */
-  cursor: pointer; /*移到button讓滑鼠變成手指*/
-  outline: none; /*取消點擊後出現框線的效果*/
-  /* text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7); */
-}
-
-li span input[type='button']:hover {
+li a:hover {
   background-color: #e7008c;
   transition: 0.3s;
   text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);
 }
 
-ul .show:hover span {
+ul .show:hover a {
   /*在class為show的li標籤被hover後，span從原本隱藏變為顯示*/
   display: block; /*設為區塊就能顯示*/
 }
