@@ -204,7 +204,13 @@ li .information {
   left: 50px;
 }
 
-li a:hover {
+li .to_buy:hover {
+  background-color: #e7008c;
+  transition: 0.3s;
+  text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);
+}
+
+li .information:hover {
   background-color: #e7008c;
   transition: 0.3s;
   text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);

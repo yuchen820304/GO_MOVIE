@@ -10,10 +10,9 @@ body {
 }
 
 .wrapper {
-  background-color: #d5bca6;
   width: 1200px;
+  background-color: #d5bca6;
   margin: 0 auto;
-  position: relative;
 }
 
 /* ======導覽列====== */
@@ -24,7 +23,7 @@ nav {
   font-size: 0;
   height: 80px;
   position: fixed; /*導覽列跟著視窗滑動*/
-  z-index: 1; /*讓banner不蓋住nav*/
+  top: 0; /*因為刪掉bnanner所以main回推，原本fixed沒設定位點，因此定在*/
 }
 
 .nav_logo {
@@ -88,20 +87,11 @@ ul .buy {
   }
 }
 
-.banner {
-  height: 600px;
-  overflow: hidden; /*超出上面設定高度隱藏*/
-  position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
+ul .buy:hover {
+  filter: brightness(1.2);
 }
 
-.banner img {
-  display: block;
-  width: 1200px;
-  position: absolute; /*設絕對定位再用座標設定顯示位置*/
-  top: -55px;
-}
-
-/* ======電影時刻顯示區塊====== */
+/* ======優惠選擇區塊====== */
 main {
   width: 1200px;
   margin: 0 auto;
@@ -109,7 +99,7 @@ main {
 
 main .select {
   text-align: center;
-  margin-top: 80px;
+  padding-top: 221px;
   display: flex;
   justify-content: center;
 }
@@ -131,7 +121,7 @@ main .select .btn_now:hover {
 }
 
 main .select .coming_soon {
-  width: 125px;
+  width: 145px;
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
@@ -146,70 +136,33 @@ main .select .coming_soon:hover {
   border-bottom: 2px solid #e7008c;
 }
 
-.movie_bar {
+.list {
   width: 1032px;
+  height: 580px;
   margin: 0 auto;
   margin-top: 35px;
 }
 
-main .items {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-}
-
-main .items .list {
-  cursor: pointer;
-}
-
-main .items .movie_pic {
-  width: 200px;
-  height: 282px;
-  overflow: hidden;
-}
-
-main .items .name {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.items .name h2 {
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.items .name p {
-  color: #808080;
-  font-size: 14px;
-}
-
-.items .grade {
-  text-align: center;
-  font-size: 12px;
-  line-height: 20px;
-  color: #808080;
-  width: 85px;
-  height: 20px;
-  border: 1px solid #808080;
-  border-radius: 12.5px;
+.list ul {
+  width: 1032px;
+  height: 580px;
   margin: 0 auto;
-  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
-main .movie_pic img {
-  width: 100%;
-}
-
-.items .down {
-  margin-top: 70px;
-}
-
-.items .left {
-  box-shadow: -10px 15px 8px rgba(0, 0, 0, 0.3);
-}
-
-.items .right {
-  box-shadow: 10px 15px 8px rgba(0, 0, 0, 0.3);
+.list ul li {
+  width: 300px;
+  height: 100px;
+  font-size: 18px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  text-align: center;
+  line-height: 100px;
+  color: #808080;
+  cursor: pointer;
 }
 
 /* ======頁尾區塊====== */

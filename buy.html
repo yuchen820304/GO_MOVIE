@@ -6,44 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./css/time.css">
+  <link rel="stylesheet" href="./css/buy.css">
 </head>
 
 <body>
 
-
   <div class="wrapper">
-
-    <!-- 導覽列 -->
-    <nav>
-      <a href="./index.html" class="nav_logo">
-        <img src="./img/LOGO.png" alt="">
-      </a>
-
-      <div class="content">
-        <ul>
-          <li><a href="./time.html">電影時刻</a></li>
-          <li><a href="./discount.html">優惠訊息</a></li>
-          <a class="buy" href="./buy.html">立刻購票</a>
-          <li><a href="">影評文章</a></li>
-          <li><a href="">會員中心</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="banner">
-      <img src="./img/banner.jpg" alt="">
-    </div>
-
-    <!-- 電影時刻顯示區塊 -->
     <main>
       <div class="select">
-        <div class="btn_now">現正熱映</div>
-        <div class="coming_soon">即將上映</div>
+        <div class="btn_now">想看什麼電影?</div>
       </div>
 
       <!-- 上層區塊 -->
-      <div class="movie_bar">
+      <div class="menu">
+        <h2>訂票排行榜</h2>
         <div class="items">
           <div class="list up">
             <div class="movie_pic left">
@@ -52,8 +28,8 @@
             <div class="name">
               <h2>迴路追殺令</h2>
               <p>BODD LEVEL</p>
+              <div class="grade">輔15級</div>
             </div>
-            <div class="grade">輔15級</div>
           </div>
 
           <div class="list down">
@@ -63,8 +39,8 @@
             <div class="name">
               <h2>角頭-浪流連</h2>
               <p>The Last Stray</p>
+              <div class="grade">輔15級</div>
             </div>
-            <div class="grade">輔15級</div>
           </div>
 
           <div class="list up">
@@ -74,8 +50,8 @@
             <div class="name">
               <h2>我沒有談的那場戀愛</h2>
               <p>I MISSED YOU</p>
+              <div class="grade">普遍級</div>
             </div>
-            <div class="grade">普遍級</div>
           </div>
 
           <div class="list down ">
@@ -85,12 +61,14 @@
             <div class="name">
               <h2>詐欺女王</h2>
               <p>I CARE A LOT</p>
+              <div class="grade">輔15級</div>
             </div>
-            <div class="grade">輔15級</div>
           </div>
         </div>
+      </div>
 
-        <!-- 下層區塊 -->
+      <!-- 下層區塊 -->
+      <div class="menu">
         <div class="items">
           <div class="list up">
             <div class="movie_pic left">
@@ -99,8 +77,8 @@
             <div class="name">
               <h2>金牌特務：機密對決</h2>
               <p>Kingsman: The Golden Circle</p>
+              <div class="grade">輔15級</div>
             </div>
-            <div class="grade">輔15級</div>
           </div>
 
           <div class="list down">
@@ -108,10 +86,12 @@
               <img src="./img/Avengers.jpg" alt="">
             </div>
             <div class="name">
-              <h2>復仇者聯盟：終局之戰</h2>
-              <p>Avengers: Endgame</p>
+              <a href="./buy_select.html">
+                <h2>復仇者聯盟：終局之戰</h2>
+                <p>Avengers: Endgame</p>
+              </a>
+              <div class="grade">保護級</div>
             </div>
-            <div class="grade">保護級</div>
           </div>
 
           <div class="list up">
@@ -121,8 +101,8 @@
             <div class="name">
               <h2>偷天行動</h2>
               <p>Twist</p>
+              <div class="grade">保護級</div>
             </div>
-            <div class="grade">保護級</div>
           </div>
 
           <div class="list down ">
@@ -132,10 +112,27 @@
             <div class="name">
               <h2>靈魂急轉彎</h2>
               <p>Soul</p>
+              <div class="grade">普遍級</div>
             </div>
-            <div class="grade">普遍級</div>
           </div>
         </div>
+      </div>
+      <div class="other">
+        <h2>其他院線片</h2>
+        <ul>
+          <li><a href="">靈魂急轉彎</a></li>
+          <li><a href="">想見你的愛</a></li>
+          <li><a href="">跟你老婆去旅行</a></li>
+          <li><a href="">拆彈專家2</a></li>
+          <li><a href="">鬼滅之刃劇場版無限列車篇</a></li>
+          <li><a href="">偷天行動</a></li>
+          <li><a href="">叱咤風雲</a></li>
+          <li><a href="">捍衛救援</a></li>
+          <li><a href="">侏儸紀世界3</a></li>
+          <li><a href="">天能</a></li>
+          <li><a href="">世界末日</a></li>
+          <li><a href="">不可能的任務：鬼影行動</a></li>
+        </ul>
       </div>
     </main>
 
@@ -156,6 +153,7 @@
         </div>
       </div>
     </footer>
+  </div>
 </body>
 
 </html>

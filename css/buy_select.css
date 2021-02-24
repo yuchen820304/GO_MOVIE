@@ -10,10 +10,9 @@ body {
 }
 
 .wrapper {
-  background-color: #d5bca6;
   width: 1200px;
   margin: 0 auto;
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* ======導覽列====== */
@@ -24,7 +23,7 @@ nav {
   font-size: 0;
   height: 80px;
   position: fixed; /*導覽列跟著視窗滑動*/
-  z-index: 1; /*讓banner不蓋住nav*/
+  top: 0; /*定在視窗最上面*/
 }
 
 .nav_logo {
@@ -88,128 +87,172 @@ ul .buy {
   }
 }
 
-.banner {
-  height: 600px;
-  overflow: hidden; /*超出上面設定高度隱藏*/
-  position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
+ul .buy:hover {
+  filter: brightness(1.2);
 }
 
-.banner img {
-  display: block;
-  width: 1200px;
-  position: absolute; /*設絕對定位再用座標設定顯示位置*/
-  top: -55px;
-}
-
-/* ======電影時刻顯示區塊====== */
+/*======日期選擇區塊======*/
 main {
   width: 1200px;
   margin: 0 auto;
 }
 
-main .select {
+.buy_information {
+  width: 1032px;
+  margin: 0 auto;
+  padding-top: 180px;
+}
+
+.buy_information p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* ======日期區塊====== */
+.date_bar {
+  margin-top: 20px;
+  background-color: #2b2b2b;
+}
+
+.date {
+  width: 1032px;
+  padding: 50px 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.date .box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  margin-right: 50px;
+}
+
+.date .box:hover {
+  background-color: #e7008c;
+}
+
+.box .day {
+  height: 30px;
+  line-height: 70px;
+  color: #ffffff;
+  font-size: 12px;
   text-align: center;
-  margin-top: 80px;
+}
+
+.box .month {
+  height: 50px;
+  line-height: 60px;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ======時間區塊====== */
+.time_block {
+  width: 1032px;
+  margin: 0 auto;
+}
+
+.time_block .kind {
   display: flex;
   justify-content: center;
-}
-
-main .select .btn_now {
-  width: 125px;
   color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 52.5px;
-  cursor: pointer;
-  border-bottom: 2px solid transparent; /*在hover前藏住底線*/
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-main .select .btn_now:hover {
-  transition: border-bottom 0.3s;
-  text-shadow: 0 3px 6px #000000;
-  border-bottom: 2px solid #e7008c; /*顯示被藏住的底線*/
+.kind .type {
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  border-bottom: 1px solid transparent;
 }
 
-main .select .coming_soon {
-  width: 125px;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 52.5px;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-}
-
-main .select .coming_soon:hover {
-  transition: border-bottom 0.3s;
-  text-shadow: 0 3px 6px #000000;
+.kind .type:hover {
   border-bottom: 2px solid #e7008c;
 }
 
-.movie_bar {
+.time_block .time_bar {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.time_bar .box {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+.time_bar .box:hover {
+  background-color: #e7008c;
+}
+
+/* ======人數區塊====== */
+.people_block {
   width: 1032px;
   margin: 0 auto;
-  margin-top: 35px;
-}
-
-main .items {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-}
-
-main .items .list {
-  cursor: pointer;
-}
-
-main .items .movie_pic {
-  width: 200px;
-  height: 282px;
-  overflow: hidden;
-}
-
-main .items .name {
   text-align: center;
-  margin-top: 30px;
 }
 
-.items .name h2 {
+.people_block .people {
+  display: inline-block;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-.items .name p {
-  color: #808080;
-  font-size: 14px;
-}
-
-.items .grade {
+.people .type {
+  width: 130px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
-  font-size: 12px;
-  line-height: 20px;
-  color: #808080;
-  width: 85px;
-  height: 20px;
-  border: 1px solid #808080;
-  border-radius: 12.5px;
+  border-bottom: 1px solid transparent;
+}
+
+.people .type:hover {
+  border-bottom: 2px solid #e7008c;
+}
+
+.people_block .people_bar {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.box_people .count {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+.people_bar .box_people .count:hover {
+  background-color: #e7008c;
+}
+
+main a {
+  display: block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
   margin: 0 auto;
-  margin-top: 5px;
-}
-
-main .movie_pic img {
-  width: 100%;
-}
-
-.items .down {
-  margin-top: 70px;
-}
-
-.items .left {
-  box-shadow: -10px 15px 8px rgba(0, 0, 0, 0.3);
-}
-
-.items .right {
-  box-shadow: 10px 15px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ======頁尾區塊====== */
