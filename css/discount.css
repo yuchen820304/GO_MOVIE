@@ -22,8 +22,9 @@ nav {
   color: #ffffff;
   font-size: 0;
   height: 80px;
-  position: fixed; /*導覽列跟著視窗滑動*/
-  top: 0; /*因為刪掉bnanner所以main回推，原本fixed沒設定位點，因此定在*/
+  position: sticky; /*導覽列跟著視窗滑動*/
+  top: 0;
+  left: 0; /*定在視窗最上面*/
 }
 
 .nav_logo {
@@ -95,11 +96,11 @@ ul .buy:hover {
 main {
   width: 1200px;
   margin: 0 auto;
+  margin-top: 141px;
 }
 
 main .select {
   text-align: center;
-  padding-top: 221px;
   display: flex;
   justify-content: center;
 }

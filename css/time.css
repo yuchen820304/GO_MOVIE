@@ -23,7 +23,9 @@ nav {
   color: #ffffff;
   font-size: 0;
   height: 80px;
-  position: fixed; /*導覽列跟著視窗滑動*/
+  position: sticky; /*導覽列跟著視窗滑動*/
+  top: 0;
+  left: 0; /*定在視窗最上面*/
   z-index: 1; /*讓banner不蓋住nav*/
 }
 
@@ -159,13 +161,13 @@ main .items {
 }
 
 main .items .list {
+  width: 200px; /*電影框範圍*/
   cursor: pointer;
 }
 
 main .items .movie_pic {
-  width: 200px;
   height: 282px;
-  overflow: hidden;
+  overflow: hidden; /*超出上面電影框範圍隱藏*/
 }
 
 main .items .name {

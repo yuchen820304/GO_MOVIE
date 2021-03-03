@@ -22,8 +22,9 @@ nav {
   color: #ffffff;
   font-size: 0;
   height: 80px;
-  position: fixed; /*導覽列跟著視窗滑動*/
-  top: 0; /*定在視窗最上面*/
+  position: sticky; /*導覽列跟著視窗滑動*/
+  top: 0;
+  left: 0; /*定在視窗最上面*/
 }
 
 .nav_logo {
