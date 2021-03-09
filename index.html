@@ -7,27 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GO MOVIE</title>
   <link rel="stylesheet" href="./css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 </head>
 
 <body>
-
+  <input type="checkbox" name="" id="menu_control">
 
   <div class="wrapper">
 
     <!-- 導覽列 -->
-    <nav>
-      <a href="./index.html" class="nav_logo">
-        <img src="./img/LOGO.png" alt="">
-      </a>
+    <label for="menu_control" class="menu_btn">
+      <span>選單</span>
+    </label>
 
-      <div class="content">
-        <ul>
-          <li><a href="./time.html">電影時刻</a></li>
-          <li><a href="./discount.html">優惠訊息</a></li>
-          <li class="buy"><a href="./buy.html">立刻購票</a></li>
-          <li><a href="">影評文章</a></li>
-          <li><a href="">會員中心</a></li>
-        </ul>
+    <nav>
+      <div class="logo">
+        <a href="./index.html" class="nav_logo">
+          <img src="./img/LOGO.png" alt="">
+        </a>
+      </div>
+
+      <div class="list">
+        <div class="list_btn"><a href="./time.html">電影時刻</a></div>
+        <div class="list_btn"><a href="./discount.html">優惠訊息</a></div>
+        <div class="buy list_btn"><a href="./buy.html">立刻購票</a></div>
+        <div class="list_btn"><a href="#">影評文章</a></div>
+        <div class="list_btn"><a href="#">會員中心</a></div>
       </div>
     </nav>
 
@@ -44,26 +50,25 @@
 
       <ul>
         <li>
-          <img src="./img/Twist.jpg" class="small l_shadow" alt="">
+          <img src="./img/Twist.jpg" class="small l_shadow rwd_size" alt="">
         </li>
 
         <li>
-          <img src="./img/THESOUL.jpg" class="middle l_shadow" alt="">
+          <img src="./img/THESOUL.jpg" class="middle l_shadow rwd_size" alt="">
         </li>
 
         <li class="show">
-          <img src="./img/Avengers.jpg" class="large m_shadow" alt="">
+          <img src="./img/Avengers.jpg" class="large m_shadow rwd_size" alt="">
           <a class="to_buy" href="">直接購票</a>
           <a class="information" href="">電影介紹</a>
-
         </li>
 
         <li>
-          <img src="./img/I_Care_A_Lot.jpg" class="middle r_shadow" alt="">
+          <img src="./img/I_Care_A_Lot.jpg" class="middle r_shadow rwd_size" alt="">
         </li>
 
         <li>
-          <img src="./img/Kingsman.jpg" class="small r_shadow" alt="">
+          <img src="./img/Kingsman.jpg" class="small r_shadow rwd_size" alt="">
         </li>
       </ul>
     </main>

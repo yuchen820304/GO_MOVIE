@@ -16,9 +16,41 @@ body {
   position: relative;
 }
 
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+}
+
+.menu_btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #aaaaaa;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 8px 0 #aaaaaa, 0 -8px 0 #aaaaaa;
+}
+
 /* ======導覽列====== */
 nav {
   width: 1200px;
+  margin: 0 auto;
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
@@ -29,7 +61,7 @@ nav {
   z-index: 1; /*讓banner不蓋住nav*/
 }
 
-.nav_logo {
+nav .nav_logo {
   position: absolute;
   top: 11px;
   margin-left: 65px;
@@ -39,41 +71,62 @@ nav .nav_logo img {
   height: 58px;
 }
 
-nav .content {
-  line-height: 80px; /*設定與nav高度一樣讓文字垂直置中*/
+nav .list {
+  outline: 1px solid yellow;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 80px;
 }
 
-nav ul {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
+nav .list .list_btn {
+  float: left;
 }
 
-nav ul li {
-  margin: 0 30px;
+.list div:nth-child(1) {
+  position: absolute;
+  left: 200px;
+}
+
+.list div:nth-child(2) {
+  position: absolute;
+  left: 310px;
+}
+
+.list div:nth-child(4) {
+  position: absolute;
+  right: 290px;
+}
+
+.list div:nth-child(5) {
+  position: absolute;
+  right: 180px;
 }
 
 nav a {
+  display: block;
   text-decoration: none;
   color: #ffffff;
 }
 
-ul .buy {
+.list .buy {
   /* display: block; 有吃到父層flex屬性所以不用再設block寫寬高*/
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
-  width: 282px;
-  height: 141px; /*高度為原來一半才會半圓*/
+  width: 232px;
+  height: 116px; /*高度為原來一半才會半圓*/
   text-align: center;
-  border-radius: 0 0 141px 141px; /*設定下半圓*/
+  border-radius: 0 0 116px 116px; /*設定下半圓*/
   box-shadow: 0 15px 15px rgba(255, 255, 255, 0.5); /*陰影設定垂直位移15px,擴散15px,顏色及透明度*/
   background-image: radial-gradient(
-    circle /* 90deg, */ 141px at 141px 0,
+    circle /* 90deg, */ 116px at 116px 0,
     #bc21c1 0%,
     #bc21c1 55%,
     #3f0041 100%
   );
+  position: absolute;
+  left: 484px;
   animation: shine 2s linear infinite; /*設置動畫*/
 }
 
@@ -90,11 +143,12 @@ ul .buy {
   }
 }
 
-ul .buy:hover {
+.list .buy:hover {
   filter: brightness(1.2);
 }
 
 .banner {
+  width: 1200px;
   height: 600px;
   overflow: hidden; /*超出上面設定高度隱藏*/
   position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
@@ -102,7 +156,7 @@ ul .buy:hover {
 
 .banner img {
   display: block;
-  width: 1200px;
+  width: 100%;
   position: absolute; /*設絕對定位再用座標設定顯示位置*/
   top: -55px;
 }
@@ -361,12 +415,12 @@ footer {
 
 .main {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
   display: flex;
 }
 
 .main .pay {
-  width: 1200px;
+  width: 100%;
   height: 300px;
   margin: 0 auto;
   display: flex;
@@ -400,7 +454,7 @@ footer img {
 }
 
 .download {
-  width: 579px;
+  width: 100%;
   height: 300px;
   overflow: hidden;
   position: relative; /*下載圖標定為基準*/
@@ -424,4 +478,119 @@ footer img {
   width: 136px;
   bottom: 35px;
   right: 246px;
+}
+
+/* ======RWD====== */
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  nav {
+    width: 100%;
+    /* margin: 0 auto; */
+  }
+
+  nav .list {
+    width: 100%;
+  }
+
+  .banner {
+    width: 100%;
+  }
+
+  /* .banner img {
+      width: 100%;
+    } */
+
+  main {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  main .select {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    /* display: block; */
+  }
+
+  main .select .btn_now {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+  }
+
+  main .select .coming_soon {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+  }
+
+  main ul {
+    width: 960px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  main ul li {
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    margin-top: 35px;
+    margin-left: 20px;
+  }
+
+  li .to_buy {
+    top: 40%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  li .information {
+    top: 75%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  main li .rwd_size {
+    width: 100%;
+  }
+
+  /* main .small {
+    width: 100%;
+  }
+
+  main .middle {
+    width: 100%;
+  }
+
+  main .large {
+    width: 100%;
+  } */
+
+  article {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  footer .main .pay {
+    width: 100%;
+
+    /* margin: 0 auto; */
+    overflow: hidden;
+  }
+
+  footer img {
+    display: inline-block;
+    text-align: center;
+    width: 75px;
+  }
 }
