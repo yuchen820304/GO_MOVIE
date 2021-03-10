@@ -86,7 +86,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   nav {
     width: 100%;
     height: calc(var(--nav-height) - 20px); /*小於768時nav高度縮小20px*/
