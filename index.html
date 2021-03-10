@@ -7,36 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GO MOVIE</title>
   <link rel="stylesheet" href="./css/index.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 </head>
 
 <body>
-  <input type="checkbox" name="" id="menu_control">
+
+  <!-- 漢堡選單遠端控制 -->
+  <!-- <input type="checkbox" name="" id="menu_control"> -->
 
   <div class="wrapper">
 
+
+
     <!-- 導覽列 -->
-    <label for="menu_control" class="menu_btn">
-      <span>選單</span>
-    </label>
-
     <nav>
-      <div class="logo">
-        <a href="./index.html" class="nav_logo">
-          <img src="./img/LOGO.png" alt="">
-        </a>
-      </div>
 
-      <div class="list">
-        <div class="list_btn"><a href="./time.html">電影時刻</a></div>
-        <div class="list_btn"><a href="./discount.html">優惠訊息</a></div>
-        <div class="buy list_btn"><a href="./buy.html">立刻購票</a></div>
-        <div class="list_btn"><a href="#">影評文章</a></div>
-        <div class="list_btn"><a href="#">會員中心</a></div>
+      <!-- 漢堡選單 -->
+      <label for="menu_control" class="menu_btn">
+        <span>選單</span>
+      </label>
+
+      <a href="./index.html" class="nav_logo">
+        <img src="./img/LOGO.png" alt="">
+      </a>
+      <div class="content">
+        <ul>
+          <li><a href="./time.html">電影時刻</a></li>
+          <li><a href="./discount.html">優惠訊息</a></li>
+          <li class="buy"><a href="./buy.html">立刻購票</a></li>
+          <li><a href="">影評文章</a></li>
+          <li><a href="">會員中心</a></li>
+        </ul>
       </div>
     </nav>
-
     <div class="banner">
       <img src="./img/banner.jpg" alt="">
     </div>
@@ -47,35 +49,28 @@
         <div class="btn_now">現正熱映</div>
         <div class="coming_soon">即將上映</div>
       </div>
-
       <ul>
         <li>
-          <img src="./img/Twist.jpg" class="small l_shadow rwd_size" alt="">
+          <img src="./img/Twist.jpg" class="small l_shadow" alt="">
         </li>
-
         <li>
-          <img src="./img/THESOUL.jpg" class="middle l_shadow rwd_size" alt="">
+          <img src="./img/THESOUL.jpg" class="middle l_shadow" alt="">
         </li>
-
         <li class="show">
-          <img src="./img/Avengers.jpg" class="large m_shadow rwd_size" alt="">
+          <img src="./img/Avengers.jpg" class="large m_shadow" alt="">
           <a class="to_buy" href="">直接購票</a>
           <a class="information" href="">電影介紹</a>
         </li>
-
         <li>
-          <img src="./img/I_Care_A_Lot.jpg" class="middle r_shadow rwd_size" alt="">
+          <img src="./img/I_Care_A_Lot.jpg" class="middle r_shadow" alt="">
         </li>
-
         <li>
-          <img src="./img/Kingsman.jpg" class="small r_shadow rwd_size" alt="">
+          <img src="./img/Kingsman.jpg" class="small r_shadow" alt="">
         </li>
       </ul>
     </main>
 
-
     <!-- 影評區塊 -->
-
     <article>
       <h2>熱門影評</h2>
       <div class="movie_review">
@@ -118,6 +113,7 @@
       </div>
     </footer>
   </div>
+
 </body>
 <script></script>
 
