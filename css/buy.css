@@ -1,18 +1,67 @@
 @import url('reset.css');
-
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial;
   line-height: 1.6;
 }
 
+:root {
+  --nav-height: 80px;
+}
+
 .wrapper {
+  background-color: #d5bca6;
   width: 1200px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+/* ======漢堡選單====== */
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  /* background-color: #000000; */
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  display: none;
+  transition: all 0.3s;
+}
+
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+}
+
+.menu_btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #ffffff;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 12px 0 #ffffff, 0 -12px 0 #ffffff;
 }
 
 /* ======導覽列====== */
@@ -22,10 +71,42 @@ nav {
   color: #ffffff;
   font-size: 0;
   height: 80px;
+  height: var(--nav-height);
   position: sticky; /*導覽列跟著視窗滑動*/
   top: 0;
   left: 0; /*定在視窗最上面*/
   z-index: 1; /*讓banner不蓋住nav*/
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: calc(var(--nav-height) - 20px); /*小於768時nav高度縮小20px*/
+  }
+  .menu_btn {
+    display: block;
+    top: 10px; /*nav高度變60px時，漢堡top變10px置中*/
+  }
+  /*螢幕小於768px時，繼續隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
 }
 
 .nav_logo {
@@ -36,6 +117,13 @@ nav {
 
 nav .nav_logo img {
   height: 58px;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav_logo img {
+    height: 38px; /*小於768時LOGO縮小*/
+  }
 }
 
 nav .content {
@@ -43,13 +131,33 @@ nav .content {
 }
 
 nav ul {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
 }
 
 nav ul li {
-  margin: 0 30px;
+  margin: 0 15px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 993px) {
+  /*螢幕大於768小於等於992時，除了購買按鈕以外其他隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
+  .menu_btn {
+    display: block;
+    top: 20px;
+  }
 }
 
 nav a {
@@ -59,21 +167,41 @@ nav a {
 
 ul .buy {
   /* display: block; 有吃到父層flex屬性所以不用再設block寫寬高*/
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
-  width: 282px;
-  height: 141px; /*高度為原來一半才會半圓*/
+  width: 232px;
+  height: 116px; /*高度為原來一半才會半圓*/
   text-align: center;
-  border-radius: 0 0 141px 141px; /*設定下半圓*/
+  border-radius: 0 0 116px 116px; /*設定下半圓*/
   box-shadow: 0 15px 15px rgba(255, 255, 255, 0.5); /*陰影設定垂直位移15px,擴散15px,顏色及透明度*/
   background-image: radial-gradient(
-    circle /* 90deg, */ 141px at 141px 0,
+    circle /* 90deg, */ 116px at 116px 0,
     #bc21c1 0%,
     #bc21c1 55%,
     #3f0041 100%
   );
   animation: shine 2s linear infinite; /*設置動畫*/
+}
+
+@media screen and (max-width: 768px) {
+  ul .buy {
+    width: 182px;
+    height: 90px;
+    font-size: 23px;
+    border-radius: 0 0 90px 90px;
+    background-image: radial-gradient(
+      circle /* 90deg, */ 90px at 90px 0,
+      #bc21c1 0%,
+      #bc21c1 55%,
+      #3f0041 100%
+    );
+  }
+  nav a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
 @keyframes shine {
@@ -88,136 +216,270 @@ ul .buy {
     transform: scale(1);
   }
 }
-
-main {
-  width: 1032px;
-  margin: 0 auto;
-  margin-top: 141px;
+ul .buy:hover {
+  filter: brightness(1.2);
+}
+.banner {
+  height: 600px;
+  overflow: hidden; /*超出上面設定高度隱藏*/
+  position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
+}
+.banner img {
+  display: block;
+  width: 1200px;
+  position: absolute; /*設絕對定位再用座標設定顯示位置*/
+  top: -55px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .banner {
+    width: 100%;
+  }
+  .banner img {
+    min-width: 100%; /*最小寬100%，可以超過*/
+    position: relative; /*定位在50%的地方，從最左上開始算*/
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 580px;
+  }
+  .banner img {
+    min-width: 100%;
+    position: relative;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ======電影選擇區塊====== */
+main {
+  width: 1036px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  main {
+    width: 100%;
+  }
+}
+
+main .select {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
 main .select .btn_now {
+  width: 125px;
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
+  margin: 0 52.5px;
   cursor: pointer;
-  border-bottom: 2px solid #e7008c;
+  border-bottom: 2px solid transparent; /*在hover前藏住底線*/
+}
+main .select .btn_now:hover {
+  transition: border-bottom 0.3s;
   text-shadow: 0 3px 6px #000000;
+  border-bottom: 2px solid #e7008c; /*顯示被藏住的底線*/
 }
-
-.menu {
-  margin-top: 50px;
-}
-
-.menu h2 {
-  font-size: 24px;
+main .select .coming_soon {
+  width: 125px;
   color: #ffffff;
-  margin-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 52.5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+main .select .coming_soon:hover {
+  transition: border-bottom 0.3s;
   text-shadow: 0 3px 6px #000000;
+  border-bottom: 2px solid #e7008c;
+}
+main ul {
+  display: flex;
+  align-items: center; /*子層項目垂直置中*/
+  justify-content: space-between; /*伸縮項目平均分配並靠齊容器左右邊界*/
+  margin-top: 35px;
 }
 
-.menu .items {
+@media screen and (min-width: 1024px) and (max-width: 1201px) {
+  main ul {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
+}
+
+/* main li {
+  
+} */
+main li:hover img {
+  /*在li被hover之後img的動作*/
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+ul .show {
+  position: relative; /*sapn定位基準*/
+}
+li .to_buy {
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 18px;
+  display: none; /*在hover前先隱藏*/
+  position: absolute; /*按鈕定位在海報中*/
+  top: 250px;
+  left: 50px;
+}
+li .information {
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 18px;
+  display: none; /*在hover前先隱藏*/
+  position: absolute; /*按鈕定位在海報中*/
+  top: 310px;
+  left: 50px;
+}
+li .to_buy:hover {
+  background-color: #e7008c;
+  transition: 0.3s;
+  text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);
+}
+li .information:hover {
+  background-color: #e7008c;
+  transition: 0.3s;
+  text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);
+}
+ul .show:hover a {
+  /*在class為show的li標籤被hover後，span從原本隱藏變為顯示*/
+  display: block; /*設為區塊就能顯示*/
+}
+main ul .l_shadow {
+  /*左側圖陰影*/
+  box-shadow: -10px 15px 8px rgba(0, 0, 0, 0.3);
+}
+main ul .m_shadow {
+  /*中間圖陰影*/
+  box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);
+}
+main ul .r_shadow {
+  /*右側圖陰影*/
+  box-shadow: 10px 15px 8px rgba(0, 0, 0, 0.3);
+}
+main .small {
+  /*小圖尺寸*/
+  width: 130px;
+}
+main .middle {
+  /*中圖尺寸*/
+  width: 180px;
+}
+main .large {
+  /*大圖尺寸*/
+  width: 270px;
+}
+/* ======影評區塊====== */
+article {
+  width: 1032px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+}
+.movie_review {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  margin-top: 10px;
+  margin-top: 35px;
 }
-
-.menu .items .list {
-  background-color: #000000;
-  width: 200px;
-  height: 282px;
+.left {
+  width: 420px;
+  height: 236px;
+  overflow: hidden; /*下面hover動畫放大時超出範圍隱藏*/
   position: relative;
 }
-
-.menu .items .movie_pic {
-  width: 200px;
-  height: 282px;
-  overflow: hidden;
+.left:hover {
+  cursor: pointer;
 }
-
-.menu .items .name {
-  width: 200px;
-  height: 44px;
-  text-align: center;
+.left:hover img {
+  /*動畫放大*/
+  transform: scale(1.1);
+  transition: all 0.5s ease 0s;
+}
+.left p {
+  width: 340px;
   position: absolute;
-  top: 50px;
-  display: none;
-}
-
-.items .name a {
-  text-decoration: none;
-}
-
-.menu .items .list:hover img {
-  transition: all 0.2s;
-  opacity: 0.2;
-}
-
-.menu .items .list:hover .name {
-  display: block;
-}
-
-.items .name h2 {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
+  /* font-weight: bold; */
+  top: 20px;
+  left: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 1; /*讓img放大時字不會消失，應該是權限比重問題*/
 }
-
-.items .name p {
-  color: #808080;
-  font-size: 14px;
-  margin-top: 50px;
-}
-
-.items .name .grade {
-  text-align: center;
-  font-size: 12px;
-  line-height: 20px;
-  color: #808080;
-  width: 85px;
-  height: 20px;
-  border: 1px solid #808080;
-  border-radius: 12.5px;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
-.menu .movie_pic img {
+.left img {
   width: 100%;
 }
-
-.items .left {
-  box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);
-}
-
-.items .right {
-  box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);
-}
-
-.other h2 {
-  font-size: 24px;
-  color: #ffffff;
-  margin-top: 50px;
-  text-shadow: 0 3px 6px #000000;
-}
-
-.other ul {
+.right ul {
+  width: 562px;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-content: space-between;
 }
-
-.other ul li {
-  width: 210px;
-  height: 40px;
-  margin-right: 40px;
+.right ul li {
+  width: 256px;
+  height: 236px;
+  position: relative; /*日期文字定位基準*/
 }
-
-.other ul a {
+ul li .block {
+  /*li裡的圖片包一層div，設定長寬，hover放大時就能hidden超出部分且不影響下面p段落*/
+  width: 256px;
+  height: 144px;
+  overflow: hidden;
+}
+ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 16px;
 }
-
+.right ul li:hover img {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s ease 0s;
+}
+.right img {
+  width: 100%;
+}
+.right .date {
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute; /*日期文字設絕對定位*/
+  bottom: 0; /*定位在li的最下方*/
+}
 /* ======頁尾區塊====== */
 footer {
   width: 1200px;
@@ -226,13 +488,11 @@ footer {
   background-color: #5e8686;
   margin-top: 80px;
 }
-
 .main {
   margin: 0 auto;
   width: 1200px;
   display: flex;
 }
-
 .main .pay {
   width: 1200px;
   height: 300px;
@@ -243,42 +503,35 @@ footer {
   position: relative;
   margin-left: 50px;
 }
-
 footer img {
   width: 176px;
 }
-
 .credit_card {
   height: 130px;
   position: relative; /*底下圖片訂為基準*/
 }
-
 .credit_card img {
   /*圖片設絕對定位靠下，計算距離靠最右*/
   position: absolute;
   left: 166px;
   bottom: 0;
 }
-
 .credit_card p {
   width: 297px; /*設寬讓文字超過自動斷行*/
   font-size: 12px;
   color: #ffffff;
   margin-left: 45px;
 }
-
 .download {
   width: 579px;
   height: 300px;
   overflow: hidden;
   position: relative; /*下載圖標定為基準*/
 }
-
 .download img {
   width: 479px;
   opacity: 0.6; /*這裡設透明度會影響整個download的IMG*/
 }
-
 .download .appitem {
   position: absolute; /*圖片定位*/
   width: 136px;
@@ -286,7 +539,6 @@ footer img {
   right: 60px;
   opacity: 1; /*這邊針對.appitem改回不透明*/
 }
-
 .download .google {
   position: absolute; /*圖片定位*/
   width: 136px;
