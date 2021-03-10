@@ -9,11 +9,61 @@ body {
   line-height: 1.6;
 }
 
+:root {
+  --nav-height: 80px;
+}
+
 .wrapper {
   background-color: #d5bca6;
   width: 1200px;
   margin: 0 auto;
   position: relative;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+/* ======漢堡選單====== */
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  /* background-color: #000000; */
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  display: none;
+  transition: all 0.3s;
+}
+
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+}
+
+.menu_btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #ffffff;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 12px 0 #ffffff, 0 -12px 0 #ffffff;
 }
 
 /* ======導覽列====== */
@@ -22,11 +72,42 @@ nav {
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
-  height: 80px;
+  height: var(--nav-height);
   position: sticky; /*導覽列跟著視窗滑動*/
   top: 0;
   left: 0; /*定在視窗最上面*/
   z-index: 1; /*讓banner不蓋住nav*/
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  nav {
+    width: 100%;
+    height: calc(var(--nav-height) - 20px); /*小於768時nav高度縮小20px*/
+  }
+  .menu_btn {
+    display: block;
+    top: 10px; /*nav高度變60px時，漢堡top變10px置中*/
+  }
+  /*螢幕小於768px時，繼續隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
 }
 
 .nav_logo {
@@ -37,6 +118,13 @@ nav {
 
 nav .nav_logo img {
   height: 58px;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav_logo img {
+    height: 38px; /*小於768時LOGO縮小*/
+  }
 }
 
 nav .content {
@@ -44,13 +132,33 @@ nav .content {
 }
 
 nav ul {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
 }
 
 nav ul li {
-  margin: 0 30px;
+  margin: 0 15px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 993px) {
+  /*螢幕大於768小於等於992時，除了購買按鈕以外其他隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
+  .menu_btn {
+    display: block;
+    top: 20px;
+  }
 }
 
 nav a {
@@ -60,21 +168,41 @@ nav a {
 
 ul .buy {
   /* display: block; 有吃到父層flex屬性所以不用再設block寫寬高*/
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
-  width: 282px;
-  height: 141px; /*高度為原來一半才會半圓*/
+  width: 232px;
+  height: 116px; /*高度為原來一半才會半圓*/
   text-align: center;
-  border-radius: 0 0 141px 141px; /*設定下半圓*/
+  border-radius: 0 0 116px 116px; /*設定下半圓*/
   box-shadow: 0 15px 15px rgba(255, 255, 255, 0.5); /*陰影設定垂直位移15px,擴散15px,顏色及透明度*/
   background-image: radial-gradient(
-    circle /* 90deg, */ 141px at 141px 0,
+    circle /* 90deg, */ 116px at 116px 0,
     #bc21c1 0%,
     #bc21c1 55%,
     #3f0041 100%
   );
   animation: shine 2s linear infinite; /*設置動畫*/
+}
+
+@media screen and (max-width: 768px) {
+  ul .buy {
+    width: 182px;
+    height: 90px;
+    font-size: 23px;
+    border-radius: 0 0 90px 90px;
+    background-image: radial-gradient(
+      circle /* 90deg, */ 90px at 90px 0,
+      #bc21c1 0%,
+      #bc21c1 55%,
+      #3f0041 100%
+    );
+  }
+  nav a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
 @keyframes shine {
@@ -107,10 +235,42 @@ ul .buy:hover {
   top: -55px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .banner {
+    width: 100%;
+  }
+  .banner img {
+    min-width: 100%; /*最小寬100%，可以超過*/
+    position: relative; /*定位在50%的地方，從最左上開始算*/
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 580px;
+  }
+  .banner img {
+    min-width: 100%;
+    position: relative;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* ======電影選擇區塊====== */
 main {
   width: 1036px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  main {
+    width: 100%;
+  }
 }
 
 main .select {
@@ -157,6 +317,14 @@ main ul {
   align-items: center; /*子層項目垂直置中*/
   justify-content: space-between; /*伸縮項目平均分配並靠齊容器左右邊界*/
   margin-top: 35px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1201px) {
+  main ul {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
 }
 
 /* main li {
