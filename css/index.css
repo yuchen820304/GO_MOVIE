@@ -116,6 +116,12 @@ nav {
   margin-left: 65px;
 }
 
+@media screen and (max-width: 768px) {
+  .nav_logo {
+    margin-left: 10px; /*小於768時離左邊10px*/
+  }
+}
+
 nav .nav_logo img {
   height: 58px;
   transition: all 0.3s;
@@ -235,7 +241,7 @@ ul .buy:hover {
   top: -55px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .banner {
     width: 100%;
   }
@@ -263,11 +269,11 @@ ul .buy:hover {
 
 /* ======電影選擇區塊====== */
 main {
-  width: 1036px;
+  width: 1200px;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   main {
     width: 100%;
   }
@@ -313,19 +319,44 @@ main .select .coming_soon:hover {
 }
 
 main ul {
+  width: 1024px;
+  margin: 0 auto;
   display: flex;
   align-items: center; /*子層項目垂直置中*/
   justify-content: space-between; /*伸縮項目平均分配並靠齊容器左右邊界*/
   margin-top: 35px;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1201px) {
-  main ul {
-    width: 960px;
-    margin: 0 auto;
-    margin-top: 35px;
+@media screen and (max-width: 1200px) {
+  main {
+    max-width: 1200px;
+    width: 100%;
   }
+
+  main ul {
+    max-width: 1024px;
+    width: 100%;
+  }
+  /* main ul {
+    max-width: 1024px;
+    width: 100%; 最大1024，小於就100%縮放不會超出
+    padding: 0 30px; 且縮放時保持左右距離30px
+  } */
 }
+
+/* @media screen and (min-width: 768px) and (max-width: 1080px) {
+  main ul {
+    max-width: 960px;
+    width: 100%; 最大960，小於就100%縮放不會超出
+    padding: 0 30px; 且縮放時保持左右距離30px
+  }
+}  */
+
+/* @media screen and (max-width: 768px) {
+  main ul {
+    min-width: 640px;
+  }
+} */
 
 /* main li {
   
@@ -419,6 +450,39 @@ main .middle {
 main .large {
   /*大圖尺寸*/
   width: 270px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  main ul {
+    max-width: 1024px;
+    width: 100%;
+  }
+
+  main li {
+    margin-right: 15px;
+  }
+
+  main li:nth-child(5) {
+    margin-right: 0;
+  }
+
+  main .small {
+    /*小圖尺寸*/
+    max-width: 130px;
+    width: 100%;
+  }
+
+  main .middle {
+    /*中圖尺寸*/
+    max-width: 180px;
+    width: 100%;
+  }
+
+  main .large {
+    /*大圖尺寸*/
+    max-width: 270px;
+    width: 100%;
+  }
 }
 
 /* ======影評區塊====== */
