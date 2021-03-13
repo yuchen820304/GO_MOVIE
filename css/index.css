@@ -327,41 +327,6 @@ main ul {
   margin-top: 35px;
 }
 
-@media screen and (max-width: 1200px) {
-  main {
-    max-width: 1200px;
-    width: 100%;
-  }
-
-  main ul {
-    max-width: 1024px;
-    width: 100%;
-  }
-  /* main ul {
-    max-width: 1024px;
-    width: 100%; 最大1024，小於就100%縮放不會超出
-    padding: 0 30px; 且縮放時保持左右距離30px
-  } */
-}
-
-/* @media screen and (min-width: 768px) and (max-width: 1080px) {
-  main ul {
-    max-width: 960px;
-    width: 100%; 最大960，小於就100%縮放不會超出
-    padding: 0 30px; 且縮放時保持左右距離30px
-  }
-}  */
-
-/* @media screen and (max-width: 768px) {
-  main ul {
-    min-width: 640px;
-  }
-} */
-
-/* main li {
-  
-} */
-
 main li:hover img {
   /*在li被hover之後img的動作*/
   opacity: 0.7;
@@ -373,7 +338,17 @@ ul .show {
   position: relative; /*sapn定位基準*/
 }
 
+ul .show .choose {
+  /* display: none; */
+  position: absolute;
+  width: 170px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+
 li .to_buy {
+  display: block;
   width: 170px;
   height: 40px;
   text-align: center;
@@ -383,13 +358,12 @@ li .to_buy {
   border: 1px solid #ffffff;
   color: #ffffff;
   font-size: 18px;
-  display: none; /*在hover前先隱藏*/
-  position: absolute; /*按鈕定位在海報中*/
-  top: 250px;
-  left: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 li .information {
+  display: block;
   width: 170px;
   height: 40px;
   text-align: center;
@@ -399,10 +373,7 @@ li .information {
   border: 1px solid #ffffff;
   color: #ffffff;
   font-size: 18px;
-  display: none; /*在hover前先隱藏*/
-  position: absolute; /*按鈕定位在海報中*/
-  top: 310px;
-  left: 50px;
+  letter-spacing: 2px;
 }
 
 li .to_buy:hover {
@@ -417,8 +388,7 @@ li .information:hover {
   text-shadow: 0 7px 8px rgba(0, 0, 0, 0.7);
 }
 
-ul .show:hover a {
-  /*在class為show的li標籤被hover後，span從原本隱藏變為顯示*/
+ul .show:hover .choose {
   display: block; /*設為區塊就能顯示*/
 }
 
@@ -457,6 +427,7 @@ main .large {
     padding: 0 20px;
     max-width: 1024px;
     width: 100%;
+    transition: all 1s;
   }
 
   main li {
