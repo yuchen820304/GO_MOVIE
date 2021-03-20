@@ -459,9 +459,18 @@ main .large {
 
 /* ======影評區塊====== */
 article {
-  width: 1032px;
-  margin: 0 auto;
+  width: 1200px;
   margin-top: 80px;
+  /* padding: 0 84px; */
+  outline: 1px solid;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  article {
+    outline: 1px solid;
+    max-width: 1200px;
+    width: 100%;
+  }
 }
 
 h2 {
@@ -472,9 +481,20 @@ h2 {
 }
 
 .movie_review {
+  width: 1032px;
+  margin: 0 auto;
   display: flex;
+  align-content: space-around;
   justify-content: space-between;
   margin-top: 35px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  article .movie_review {
+    max-width: 1032px;
+    width: 100%;
+    outline: 3px solid gold;
+  }
 }
 
 .left {
@@ -482,6 +502,7 @@ h2 {
   height: 236px;
   overflow: hidden; /*下面hover動畫放大時超出範圍隱藏*/
   position: relative;
+  outline: 1px solid yellow;
 }
 
 .left:hover {
@@ -509,11 +530,30 @@ h2 {
 }
 
 .left img {
-  width: 100%;
+  width: 420px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .left img {
+    max-width: 420px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  article .left {
+    max-width: 420px;
+    width: 100%;
+  }
+}
+
+.right {
+  width: 562px;
+  outline: 1px solid;
 }
 
 .right ul {
-  width: 562px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
@@ -552,6 +592,22 @@ ul li a {
   font-size: 12px;
   position: absolute; /*日期文字設絕對定位*/
   bottom: 0; /*定位在li的最下方*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  article .right {
+    max-width: 562px;
+    width: 100%;
+  }
+  .right ul li {
+    max-width: 256px;
+    width: 100%;
+  }
+
+  ul li .block {
+    max-width: 256px;
+    width: 100%;
+  }
 }
 
 /* ======頁尾區塊====== */
