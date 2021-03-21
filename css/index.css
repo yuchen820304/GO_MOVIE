@@ -10,7 +10,7 @@ body {
 }
 
 :root {
-  --nav-height: 80px;
+  --nav-height: 80px; /*nav高度宣告，便於帶入修改*/
 }
 
 .wrapper {
@@ -76,7 +76,7 @@ nav {
   position: sticky; /*導覽列跟著視窗滑動*/
   top: 0;
   left: 0; /*定在視窗最上面*/
-  z-index: 1; /*讓banner不蓋住nav*/
+  z-index: 5; /*讓banner不蓋住nav，且設到2可避免下面影評區塊的標題同層顯示*/
   transition: all 0.3s;
 }
 
@@ -279,6 +279,12 @@ main {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
+
 main .select {
   text-align: center;
   margin-top: 80px;
@@ -327,6 +333,10 @@ main ul {
   margin-top: 35px;
 }
 
+main ul li {
+  font-size: 0; /*取消li圖片底下空白*/
+}
+
 main li:hover img {
   /*在li被hover之後img的動作*/
   opacity: 0.7;
@@ -345,6 +355,13 @@ ul .show .choose {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -80%);
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  ul .show .choose {
+    max-width: 170px;
+    width: 100%;
+  }
 }
 
 li .to_buy {
@@ -378,6 +395,26 @@ li .information {
   text-decoration: none;
 }
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  li .to_buy {
+    margin: 0 auto;
+    max-width: 120px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+
+  li .information {
+    margin: 10px auto 0;
+    max-width: 120px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+}
+
 li .to_buy:hover {
   background-color: #e7008c;
   transition: 0.3s;
@@ -409,6 +446,13 @@ main ul .r_shadow {
   box-shadow: 10px 15px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*小於768全部變下陰影*/
+  main ul .rwd_img {
+    box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
 main .small {
   /*小圖尺寸*/
   width: 130px;
@@ -426,18 +470,18 @@ main .large {
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
   main ul {
-    padding: 0 20px;
+    padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
     max-width: 1024px;
     width: 100%;
     transition: all 1s;
   }
 
   main li {
-    margin-right: 15px;
+    margin-right: 15px; /*各li間距15px*/
   }
 
   main li:nth-child(5) {
-    margin-right: 0;
+    margin-right: 0; /*第五個li不需要所以設0，保持版型正常*/
   }
 
   main .small {
@@ -459,6 +503,27 @@ main .large {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main ul {
+    padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
+    max-width: 640px;
+    width: 100%;
+    justify-content: center;
+    align-items: baseline; /*對齊下方*/
+    flex-wrap: wrap;
+    transition: all 1s;
+  }
+
+  main li {
+    margin: 15px; /*各li間距10px*/
+  }
+
+  main li .rwd_img {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
 /* ======影評區塊====== */
 article {
   width: 1024px;
@@ -468,6 +533,13 @@ article {
 @media screen and (min-width: 768px) and (max-width: 1201px) {
   article {
     max-width: 1024px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  article {
+    max-width: 640px;
     width: 100%;
   }
 }
@@ -492,8 +564,23 @@ h2 {
   article .movie_review {
     max-width: 1024px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
     transition: all 1s; /*轉場動畫放在media query裡斷點才不會跳閃，放在原本的標籤裡會造成跳閃*/
+  }
+
+  h2 {
+    padding: 0 20px;
+    transition: all 1s;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  article .movie_review {
+    max-width: 640px;
+    width: 100%;
+    padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
+    transition: all 1s; /*轉場動畫放在media query裡斷點才不會跳閃，放在原本的標籤裡會造成跳閃*/
+    display: block;
   }
 
   h2 {
@@ -534,15 +621,14 @@ h2 {
   z-index: 1; /*讓img放大時字不會消失，應該是權限比重問題*/
 }
 
-.left img {
-  width: 420px;
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .left p {
+    width: 500px;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
-  .left img {
-    max-width: 420px;
-    width: 100%;
-  }
+.left img {
+  width: 420px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
@@ -553,21 +639,49 @@ h2 {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .left img {
+    max-width: 420px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  article .left {
+    width: 100%;
+  }
+
+  .left img {
+    width: 100%;
+  }
+}
+
 .right {
   width: 562px;
   position: relative; /*日期文字定位基準*/
 }
 
 .right ul {
-  width: 100%;
+  width: 562px;
   display: flex;
   justify-content: space-between;
   /* align-content: space-between; */
 }
 
+@media screen and (min-width: 768px) and (max-width: 1201px) {
+  .right ul {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .right ul {
+    width: 100%;
+  }
+}
+
 .right ul li {
   width: 256px;
-  /* height: 236px; */
 }
 
 ul li .block {
@@ -613,7 +727,7 @@ ul li .block {
   color: #ffffff;
   font-size: 12px;
   position: absolute; /*日期文字設絕對定位*/
-  bottom: 0; /*定位在li的最下方*/
+  bottom: 0; /*定位在right的最下方，會去吃父層被圖片撐開的高度*/
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
@@ -624,16 +738,25 @@ ul li .block {
   .right ul li {
     max-width: 256px;
     width: 100%;
-    margin-right: 15px;
+    margin-right: 15px; /*各li的間距15px*/
   }
 
   .right ul li:nth-child(2) {
-    margin-right: 0;
+    margin-right: 0; /*第二個li不需要所以設0，保持版型正常*/
   }
 
   ul li .block {
     max-width: 256px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  article .right {
+    /*小於768時，相對於movie_review的尺寸(640px)做滿版*/
+    width: 100%;
+    height: 220px; /*寫上寬度並加大讓日期繼續定在li最下方*/
+    margin-top: 20px;
   }
 }
 
@@ -646,7 +769,7 @@ footer {
   margin-top: 80px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 320px) and (max-width: 1201px) {
   footer {
     max-width: 1200px;
     width: 100%;
@@ -659,7 +782,7 @@ footer {
   display: flex;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 320px) and (max-width: 1201px) {
   .main {
     max-width: 1200px;
     width: 100%;
@@ -674,10 +797,9 @@ footer {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-left: 50px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 320px) and (max-width: 1201px) {
   .main .pay {
     max-width: 1200px;
     width: 100%;
@@ -686,25 +808,44 @@ footer {
 
 footer .footer_logo {
   width: 176px;
-  margin-right: 25px;
+  margin-left: 50px;
+  z-index: 2; /*縮到最小時不會被absolute的download區塊覆蓋*/
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
   footer .footer_logo {
     max-width: 176px;
     width: 100%;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  footer .footer_logo {
+    max-width: 136px;
+    width: 100%;
   }
 }
 
 .credit_card {
+  outline: 1px solid;
   height: 130px;
   position: relative; /*底下圖片訂為基準*/
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
   .credit_card {
     max-height: 130px;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card {
+    max-height: 100px;
+    height: 100%;
+    margin-right: 50px;
   }
 }
 
@@ -723,17 +864,28 @@ footer .footer_logo {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card img {
+    max-width: 150px;
+  }
+}
+
 .credit_card p {
   width: 297px; /*設寬讓文字超過自動斷行*/
   font-size: 12px;
   color: #ffffff;
-  /* margin-left: 45px; */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
   .credit_card p {
     max-width: 297px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card p {
+    max-width: 200px;
   }
 }
 
@@ -752,35 +904,49 @@ footer .footer_logo {
   }
 }
 
-.download img {
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.download .download_logo {
   position: absolute;
-  bottom: 0;
+  bottom: 0; /*背景圖定在最下方，縮放時就不會跑掉*/
   width: 450px;
   opacity: 0.6; /*這裡設透明度會影響整個download的IMG*/
 }
 
 @media screen and (min-width: 768px) and (max-width: 1201px) {
-  .download img {
+  .download .download_logo {
     max-width: 450px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download .download_logo {
+    max-width: 450px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 .download .applestore {
   position: absolute; /*圖片定位*/
   width: 120px;
-  bottom: 10%;
-  right: 10%;
-  transform: translate(-10%, -10%);
+  bottom: 10px;
+  right: 200px;
   opacity: 1; /*這邊針對.appitem改回不透明*/
 }
 
 .download .google {
   position: absolute; /*圖片定位*/
   width: 120px;
-  bottom: 10%;
-  right: 35%;
-  transform: translate(-35%, -10%);
+  bottom: 10px;
+  right: 50px;
   opacity: 1;
 }
 
@@ -793,6 +959,17 @@ footer .footer_logo {
   .download .google {
     max-width: 120px;
     width: 100%;
-    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download .applestore {
+    top: 0;
+    left: 0;
+  }
+
+  .download .google {
+    max-width: 80px;
+    width: 100%;
   }
 }
