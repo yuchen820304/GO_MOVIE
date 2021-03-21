@@ -21,7 +21,7 @@ body {
   transition: all 0.3s;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .wrapper {
     width: 100%;
   }
@@ -80,7 +80,7 @@ nav {
   transition: all 0.3s;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   nav {
     width: 100%;
   }
@@ -285,6 +285,12 @@ main {
   }
 }
 
+@media screen and (max-width: 576px) {
+  main {
+    width: 100%;
+  }
+}
+
 main .select {
   text-align: center;
   margin-top: 80px;
@@ -322,6 +328,20 @@ main .select .coming_soon:hover {
   transition: border-bottom 0.3s;
   text-shadow: 0 3px 6px #000000;
   border-bottom: 2px solid #e7008c;
+}
+
+@media screen and (max-width: 576px) {
+  main .select .btn_now {
+    width: 100%;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+
+  main .select .coming_soon {
+    width: 100%;
+    font-size: 20px;
+    margin: 0 10px;
+  }
 }
 
 main ul {
@@ -364,6 +384,12 @@ ul .show .choose {
   }
 }
 
+@media screen and (max-width: 576px) {
+  ul .show .choose {
+    width: 100%;
+  }
+}
+
 li .to_buy {
   display: block;
   width: 170px;
@@ -402,7 +428,8 @@ li .information {
     width: 100%;
     height: 30px;
     line-height: 30px;
-    font-size: 12px;
+    -webkit-text-size-adjust: none;
+    font-size: 14px;
   }
 
   li .information {
@@ -411,7 +438,30 @@ li .information {
     width: 100%;
     height: 30px;
     line-height: 30px;
-    font-size: 12px;
+    -webkit-text-size-adjust: none;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  li .to_buy {
+    margin: 0 auto;
+    max-width: 170px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-text-size-adjust: none;
+    font-size: 18px;
+  }
+
+  li .information {
+    margin: 10px auto 0;
+    max-width: 170px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-text-size-adjust: none;
+    font-size: 18px;
   }
 }
 
@@ -453,6 +503,13 @@ main ul .r_shadow {
   }
 }
 
+@media screen and (max-width: 576px) {
+  /*小於768全部變下陰影*/
+  main ul .rwd_img {
+    box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
 main .small {
   /*小圖尺寸*/
   width: 130px;
@@ -468,7 +525,7 @@ main .large {
   width: 270px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   main ul {
     padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
     max-width: 1024px;
@@ -524,13 +581,32 @@ main .large {
   }
 }
 
+@media screen and (max-width: 576px) {
+  main ul {
+    padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
+    width: 100%;
+    justify-content: center;
+    align-items: baseline; /*對齊下方*/
+    flex-wrap: wrap;
+    transition: all 1s;
+  }
+
+  main li {
+    margin: 15px 0; /*各li間距10px*/
+  }
+
+  main li .rwd_img {
+    width: 100%;
+  }
+}
+
 /* ======影評區塊====== */
 article {
   width: 1024px;
   margin: 80px auto 0;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   article {
     max-width: 1024px;
     width: 100%;
@@ -560,7 +636,7 @@ h2 {
   margin-top: 35px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   article .movie_review {
     max-width: 1024px;
     width: 100%;
@@ -631,7 +707,7 @@ h2 {
   width: 420px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   article .left {
     max-width: 420px;
     width: 100%;
@@ -639,7 +715,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .left img {
     max-width: 420px;
     width: 100%;
@@ -648,7 +724,9 @@ h2 {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   article .left {
+    max-width: 640px;
     width: 100%;
+    margin-right: 0;
   }
 
   .left img {
@@ -668,7 +746,7 @@ h2 {
   /* align-content: space-between; */
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .right ul {
     width: 100%;
   }
@@ -706,7 +784,7 @@ ul li .block {
   font-size: 16px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .right li a {
     max-width: 256px;
     width: 100%;
@@ -730,7 +808,7 @@ ul li .block {
   bottom: 0; /*定位在right的最下方，會去吃父層被圖片撐開的高度*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   article .right {
     max-width: 562px;
     width: 100%;
@@ -812,7 +890,7 @@ footer .footer_logo {
   z-index: 2; /*縮到最小時不會被absolute的download區塊覆蓋*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   footer .footer_logo {
     max-width: 176px;
     width: 100%;
@@ -822,19 +900,18 @@ footer .footer_logo {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   footer .footer_logo {
-    max-width: 136px;
+    max-width: 150px;
     width: 100%;
   }
 }
 
 .credit_card {
-  outline: 1px solid;
   height: 130px;
   position: relative; /*底下圖片訂為基準*/
   z-index: 2;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .credit_card {
     max-height: 130px;
     height: 100%;
@@ -843,7 +920,7 @@ footer .footer_logo {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .credit_card {
-    max-height: 100px;
+    max-height: 110px;
     height: 100%;
     margin-right: 50px;
   }
@@ -857,7 +934,7 @@ footer .footer_logo {
   bottom: 0;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .credit_card img {
     max-width: 176px;
     width: 100%;
@@ -876,7 +953,7 @@ footer .footer_logo {
   color: #ffffff;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .credit_card p {
     max-width: 297px;
     width: 100%;
@@ -885,18 +962,17 @@ footer .footer_logo {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .credit_card p {
-    max-width: 200px;
+    max-width: 160px;
   }
 }
 
 .download {
-  outline: 1px solid;
   width: 579px;
   height: 300px;
   position: relative; /*下載圖標定為基準*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .download {
     max-width: 579px;
     width: 100%;
@@ -918,7 +994,7 @@ footer .footer_logo {
   opacity: 0.6; /*這裡設透明度會影響整個download的IMG*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .download .download_logo {
     max-width: 450px;
     width: 100%;
@@ -930,7 +1006,7 @@ footer .footer_logo {
     max-width: 450px;
     width: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /*手機LOGO置中*/
   }
 }
 
@@ -950,7 +1026,7 @@ footer .footer_logo {
   opacity: 1;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1201px) {
+@media screen and (min-width: 769px) and (max-width: 1201px) {
   .download .applestore {
     max-width: 120px;
     width: 100%;
@@ -964,12 +1040,18 @@ footer .footer_logo {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .download .applestore {
-    top: 0;
-    left: 0;
+    max-width: 110px;
+    width: 100%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
   }
 
   .download .google {
-    max-width: 80px;
+    max-width: 110px;
     width: 100%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
   }
 }
