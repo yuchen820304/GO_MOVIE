@@ -608,7 +608,7 @@ footer .footer_logo {
 
 @media screen and (max-width: 575px) {
   footer .footer_logo {
-    max-width: 120px;
+    max-width: 100px;
     width: 100%;
     margin-left: 20px; /*LOGO區塊離左邊間距*/
   }
@@ -637,7 +637,7 @@ footer .footer_logo {
 
 @media screen and (max-width: 575px) {
   .credit_card {
-    max-height: 88px;
+    max-height: 74px;
     height: 100%;
     margin-right: 20px; /*信用卡資訊區塊離右邊間距*/
   }
@@ -667,7 +667,7 @@ footer .footer_logo {
 
 @media screen and (max-width: 575px) {
   .credit_card img {
-    max-width: 120px;
+    max-width: 90px;
     width: 100%;
   }
 }
@@ -692,9 +692,9 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 320px) and (max-width: 575px) {
   .credit_card p {
-    max-width: 180px;
+    max-width: 170px;
   }
 }
 
@@ -729,7 +729,10 @@ footer .footer_logo {
 .download .download_logo {
   position: absolute;
   bottom: 0; /*背景圖定在最下方，縮放時就不會跑掉*/
-  width: 450px;
+  left: 50%;
+  transform: translateX(-50%); /*背景置中*/
+  max-width: 450px;
+  width: 100%;
   opacity: 0.6; /*這裡設透明度會影響整個download的IMG*/
 }
 

@@ -10,11 +10,29 @@
 </head>
 
 <body>
+  <!-- 漢堡選單遠端控制 -->
+  <input type="checkbox" name="" id="menu_control">
 
   <div class="wrapper">
 
+
+
     <!-- 導覽列 -->
     <nav>
+
+      <!-- 漢堡選單 -->
+      <label for="menu_control" class="menu_btn">
+        <span>選單</span>
+      </label>
+
+      <div class="hamburger">
+        <a href="./time.html">電影時刻</a>
+        <a href="./discount.html">優惠訊息</a>
+        <a href="./buy.html">立刻購票</a>
+        <a href="#">影評文章</a>
+        <a href="#">會員中心</a>
+      </div>
+
       <a href="./index.html" class="nav_logo">
         <img src="./img/LOGO.png" alt="">
       </a>
@@ -107,18 +125,17 @@
     <footer>
       <div class="main">
         <div class="pay">
-          <img src="./img/LOGO.png" alt="">
+          <img class="footer_logo" src="./img/LOGO.png" alt="">
           <div class="credit_card">
             <p>GO MOVIE採用先進的TLS傳輸加密機制，資料傳輸皆經加密處理，以確保您於使用本服務資料傳輸之安全。</p>
             <img src="https://www.ecpay.com.tw/Content/themes/Intro/creditcard/images/events/card_icon.svg" alt="">
           </div>
           <div class="download">
-            <img src="./img/APP.png" alt="">
-            <img class="appitem" src="./img/APPLESTORE.png" alt="">
+            <img class="download_logo" src="./img/APP.png" alt="">
+            <img class="applestore" src="./img/APPLESTORE.png" alt="">
             <img class="appitem google" src="./img/GOOGLEPLAY.png" alt="">
           </div>
         </div>
-      </div>
     </footer>
   </div>
 </body>
