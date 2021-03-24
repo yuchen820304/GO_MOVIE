@@ -105,7 +105,7 @@ nav {
   position: sticky; /*導覽列跟著視窗滑動*/
   top: 0;
   left: 0; /*定在視窗最上面*/
-  z-index: 5; /*讓banner不蓋住nav，且設到2可避免下面影評區塊的標題同層顯示*/
+  z-index: 5; /*讓banner不蓋住nav，且設到5可避免下面影評區塊的標題同層顯示*/
   transition: all 0.3s;
 }
 

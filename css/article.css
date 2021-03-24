@@ -14,7 +14,7 @@ body {
 }
 
 .wrapper {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #d5bca6;
   width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -266,220 +266,188 @@ ul .buy:hover {
   filter: brightness(1.2);
 }
 
-/*======日期選擇區塊======*/
-main {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  main {
-    max-width: 1200px;
-    width: 100%;
-  }
-}
-
-.buy_information {
-  margin-left: 50px;
-  padding-top: 180px;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  .buy_information {
-    padding: 180px 5% 0;
-  }
-}
-
-.buy_information p {
-  color: #ffffff;
-  font-size: 16px;
-}
-
-/* ======日期區塊====== */
-.date_bar {
-  margin-top: 20px;
-  background-color: #2b2b2b;
-}
-
-.date {
+/* ======文章輪播欄位======*/
+.article {
   width: 1024px;
   margin: 0 auto;
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
-  .date {
+  .article {
     max-width: 1024px;
     width: 100%;
   }
 }
 
-.date .box {
-  width: 90px;
-  height: 90px;
-  border: 1px solid #ffffff;
-  border-radius: 50px;
+.top_article {
+  margin: 110px auto;
+  width: 768px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .top_article {
+    padding: 0 20px;
+    max-width: 768px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    font-size: 0;
+  }
+}
+
+.top_article img {
+  width: 100%;
+}
+
+.top_article:hover img {
+  transform: scale(1.1);
+  transition: all 0.5s ease 0s;
+}
+
+.top_article h1 {
+  width: 80%;
+  color: #ffffff;
+  font-size: 24px;
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bottom_article {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .bottom_article {
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+.bottom_article .select {
+  clear: both;
+  overflow: hidden;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .bottom_article .select {
+    padding: 0 20px;
+  }
+}
+
+.bottom_article .select h2 {
+  float: left;
+  color: #ffffff;
+}
+
+.bottom_article .select .options {
+  display: flex;
+  float: right;
+}
+
+.select .options .option {
+  font-size: 14px;
+  width: 65px;
+  height: 25px;
+  color: #ffffff;
+}
+
+.article_box {
+  display: flex; /*下面設float後再設flex會變整排橫排同一行，wrap後會斷行，再設justify-content: center;置中*/
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+}
+
+.newsbox {
+  width: 25%;
+  height: 360px;
+  float: left; /*影評區塊內容橫排*/
   margin: 10px;
 }
 
-.date .box:hover {
-  background-color: #e7008c;
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .newsbox {
+    width: 40%;
+  }
 }
 
-.date .box.checked {
-  background-color: #e7008c;
+@media screen and (min-width: 400px) and (max-width: 575px) {
+  .newsbox {
+    width: 40%;
+  }
 }
 
-.box .day {
-  height: 20px;
-  line-height: 60px;
-  color: #ffffff;
+@media screen and (max-width: 400px) {
+  .newsbox {
+    margin: 0 auto;
+    width: 250px;
+  }
+}
+
+.photo_box {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo_box img {
+  height: 100%;
+}
+
+.photo_box:hover img {
+  transform: scale(1.1);
+  transition: all 0.5s ease 0s;
+}
+
+.newsbox .title {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  /* text-align: left; */
+  margin: 5px 0px;
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.newsbox .name {
+  height: 35px;
   font-size: 12px;
-  text-align: center;
-}
-
-.box .month {
-  height: 60px;
-  line-height: 70px;
   color: #ffffff;
-  font-size: 24px;
-  text-align: center;
 }
 
-/* ======時間區塊====== */
-.time_block {
-  width: 1024px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  .time_block {
-    max-width: 1024px;
-    width: 100%;
-    padding: 0 5%;
-  }
-}
-
-.time_block .kind {
-  display: flex;
-  justify-content: center;
-  color: #ffffff;
+.newsbox .text {
   font-size: 16px;
-  margin-top: 20px;
+  color: #808080;
+  width: 100%;
+  float: left;
+  text-align: left;
+  line-height: 1.5;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
-
-.kind .type {
-  width: 130px;
-  height: 30px;
-  text-align: center;
-  border-bottom: 1px solid transparent;
-}
-
-.kind .type:hover {
-  border-bottom: 2px solid #e7008c;
-}
-
-.time_block .time_bar {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-  flex-wrap: wrap;
-}
-
-.time_bar .box {
-  width: 90px;
-  height: 90px;
-  text-align: center;
-  line-height: 90px;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-  margin: 10px 20px;
-  color: #ffffff;
-}
-
-.time_bar .box:hover {
-  background-color: #e7008c;
-}
-
-.time_bar .box.checked {
-  background-color: #e7008c;
-}
-
-/* ======人數區塊====== */
-.people_block {
-  width: 1024px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  .people_block {
-    max-width: 1024px;
-    width: 100%;
-  }
-}
-
-.people_block .people {
-  display: inline-block;
-  color: #ffffff;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.people .type {
-  width: 130px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-bottom: 1px solid transparent;
-}
-
-.people .type:hover {
-  border-bottom: 2px solid #e7008c;
-}
-
-.people_block .people_bar {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-  flex-wrap: wrap;
-}
-
-.box_people .count {
-  width: 45px;
-  height: 45px;
-  text-align: center;
-  line-height: 45px;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-  margin: 10px 10px;
-  color: #ffffff;
-}
-
-.people_bar .box_people .count:hover {
-  background-color: #e7008c;
-}
-
-.people_bar .box_people .count.checked {
-  background-color: #e7008c;
-}
-
-main a {
-  display: block;
-  width: 100px;
-  height: 40px;
-  line-height: 40px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-align: center;
-  text-decoration: none;
-  margin: 0 auto;
-}
-
 /* ======頁尾區塊====== */
 footer {
   width: 1200px;
