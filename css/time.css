@@ -323,7 +323,7 @@ main {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   main {
     width: 100%;
   }
@@ -368,7 +368,7 @@ main .select .coming_soon:hover {
   border-bottom: 2px solid #e7008c;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   main .select .btn_now {
     width: 120px;
     font-size: 20px;
@@ -406,7 +406,7 @@ main .select .coming_soon:hover {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .movie_bar {
     width: 100%;
     padding: 0 20px;
@@ -440,7 +440,7 @@ main .items .list {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   main .items .list {
     max-width: 40%; /*強制畫面一次顯示兩個*/
   }
@@ -516,7 +516,7 @@ main .movie_pic img {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   /*排列反轉*/
   main .items .list:nth-child(2n + 1) {
     margin-top: 70px;
@@ -579,7 +579,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .main .pay {
     width: 100%;
   }
@@ -606,7 +606,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   footer .footer_logo {
     max-width: 100px;
     width: 100%;
@@ -635,7 +635,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card {
     max-height: 74px;
     height: 100%;
@@ -665,7 +665,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card img {
     max-width: 90px;
     width: 100%;
@@ -692,7 +692,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 575px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
   .credit_card p {
     max-width: 170px;
   }
@@ -719,7 +719,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download {
     position: absolute;
     width: 100%;
@@ -792,7 +792,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download .applestore {
     max-width: 100px;
     width: 100%;

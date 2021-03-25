@@ -532,7 +532,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .main .pay {
     width: 100%;
   }
@@ -559,7 +559,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   footer .footer_logo {
     max-width: 100px;
     width: 100%;
@@ -588,7 +588,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card {
     max-height: 74px;
     height: 100%;
@@ -618,7 +618,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card img {
     max-width: 90px;
     width: 100%;
@@ -645,7 +645,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 575px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
   .credit_card p {
     max-width: 170px;
   }
@@ -672,7 +672,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download {
     position: absolute;
     width: 100%;
@@ -745,7 +745,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download .applestore {
     max-width: 100px;
     width: 100%;

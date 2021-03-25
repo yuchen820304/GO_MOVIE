@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO MOVIE</title>
+  <link rel="stylesheet" href="./css/member.css">
+</head>
+
+<body>
+  <!-- 漢堡選單遠端控制 -->
+  <input type="checkbox" name="" id="menu_control">
+
+  <div class="wrapper">
+
+
+
+    <!-- 導覽列 -->
+    <nav>
+
+      <!-- 漢堡選單 -->
+      <label for="menu_control" class="menu_btn">
+        <span>選單</span>
+      </label>
+
+      <div class="hamburger">
+        <a href="./time.html">電影時刻</a>
+        <a href="./discount.html">優惠訊息</a>
+        <a href="./buy.html">立刻購票</a>
+        <a href="./article.html">影評文章</a>
+        <a href="#">會員中心</a>
+      </div>
+
+      <a href="./index.html" class="nav_logo">
+        <img src="./img/LOGO.png" alt="">
+      </a>
+
+      <div class="content">
+        <ul>
+          <li><a href="./time.html">電影時刻</a></li>
+          <li><a href="./discount.html">優惠訊息</a></li>
+          <li class="buy"><a href="./buy.html">立刻購票</a></li>
+          <li><a href="./article.html">影評文章</a></li>
+          <li><a href="">會員中心</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 會員資訊區塊 -->
+    <div class="infowrapper">
+      <div class="infobox">
+        <div class="info">個人資訊</div>
+        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40"
+          class="editIcon" style="vertical-align: middle;">
+          <g>
+            <path
+              d="m29.8 14.8l-19.6 19.6-7.1-7.1 19.6-19.6z m4.6-7.9c0.9 0.9 0.8 2.5-0.2 3.5l-3.5 3.5-7.1-7.1 3.5-3.5c1-1 2.6-1.1 3.5-0.2z m-31.9 21.5l6.6 6.6-9.1 2.5z">
+            </path>
+          </g>
+        </svg>
+      </div>
+
+      <div class="photo" style="background-image: url(./img/default-avatar.png);"></div>
+
+      <div class="section name">
+        <div class="title">暱稱</div>
+        <div class="content"></div>
+      </div>
+
+      <div class="section email">
+        <div class="title">email</div>
+
+        <div class="content">yuchen820304@gmail.com</div>
+      </div>
+
+      <div class="section birthday">
+        <div class="title">出生日期</div>
+        <div class="content">1993/03/04</div>
+      </div>
+    </div>
+
+    <!-- 會員記錄區塊 -->
+
+    <div class="member_info">
+      <div class="title_box">
+        <div class="title">紅利點數</div>
+        <div class="point_box">0點</div>
+      </div>
+
+      <div class="title_box">
+        <div class="title">優惠券管理</div>
+        <input type="text" placeholder="請輸入優惠券序號" maxlength="10">
+        <button type="submit">送出</button>
+      </div>
+
+      <div class="title_box">
+        <div class="title">訂票紀錄</div>
+        <div class="recordbox">
+          <div class="poster"></div>
+          <div class="record">
+            <div class="box">
+              <div class="movie">沒有訂票紀錄</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 頁尾區塊 -->
+    <footer>
+      <div class="main">
+        <div class="pay">
+          <img class="footer_logo" src="./img/LOGO.png" alt="">
+          <div class="credit_card">
+            <p>GO MOVIE採用先進的TLS傳輸加密機制，資料傳輸皆經加密處理，以確保您於使用本服務資料傳輸之安全。</p>
+            <img src="https://www.ecpay.com.tw/Content/themes/Intro/creditcard/images/events/card_icon.svg" alt="">
+          </div>
+          <div class="download">
+            <img class="download_logo" src="./img/APP.png" alt="">
+            <img class="applestore" src="./img/APPLESTORE.png" alt="">
+            <img class="appitem google" src="./img/GOOGLEPLAY.png" alt="">
+          </div>
+        </div>
+    </footer>
+  </div>
+</body>
+
+</html>

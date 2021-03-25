@@ -323,7 +323,7 @@ main {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   main {
     width: 100%;
   }
@@ -422,7 +422,7 @@ ul .show .choose {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   ul .show .choose {
     width: 100%;
   }
@@ -481,7 +481,7 @@ li .information {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   li .to_buy {
     margin: 0 auto;
     max-width: 170px;
@@ -619,7 +619,7 @@ main .large {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   main ul {
     padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
     width: 100%;
@@ -660,7 +660,7 @@ article {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   article {
     width: 100%;
   }
@@ -711,7 +711,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   article .movie_review {
     width: 100%;
     padding: 0 20px; /*斷點時能保持跟網頁邊界間距*/
@@ -763,7 +763,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .left p {
     max-width: 420px;
     width: 100%;
@@ -802,7 +802,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   article .left {
     width: 100%;
     margin-right: 0;
@@ -837,7 +837,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .right ul {
     width: 100%;
   }
@@ -925,9 +925,9 @@ ul li .block {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   article .right {
-    /*小於等於575時，相對於movie_review的尺寸(640px)做滿版*/
+    /*小於等於576時，相對於movie_review的尺寸(640px)做滿版*/
     width: 100%;
     margin-top: 20px;
   }
@@ -1001,7 +1001,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .main .pay {
     width: 100%;
   }
@@ -1028,7 +1028,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   footer .footer_logo {
     max-width: 100px;
     width: 100%;
@@ -1057,7 +1057,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card {
     max-height: 74px;
     height: 100%;
@@ -1087,7 +1087,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .credit_card img {
     max-width: 90px;
     width: 100%;
@@ -1114,7 +1114,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 575px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
   .credit_card p {
     max-width: 170px;
   }
@@ -1141,7 +1141,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download {
     position: absolute;
     width: 100%;
@@ -1214,7 +1214,7 @@ footer .footer_logo {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
   .download .applestore {
     max-width: 100px;
     width: 100%;
