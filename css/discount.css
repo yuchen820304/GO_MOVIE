@@ -9,10 +9,90 @@ body {
   line-height: 1.6;
 }
 
+:root {
+  --nav-height: 80px; /*nav高度宣告，便於帶入修改*/
+}
+
 .wrapper {
-  width: 1200px;
   background-color: #d5bca6;
+  width: 1200px;
   margin: 0 auto;
+  position: relative;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+/* ======漢堡選單====== */
+#menu_control {
+  position: absolute;
+  opacity: 0;
+}
+
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  /* background-color: #000000; */
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  display: none;
+  transition: all 0.3s;
+}
+
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+}
+
+.menu_btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #ffffff;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 12px 0 #ffffff, 0 -12px 0 #ffffff;
+}
+
+.hamburger {
+  width: 200px;
+  height: calc(100vh - 80px);
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 80px;
+  left: -200%;
+  transition: 0.3s;
+}
+
+.hamburger a {
+  display: block;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  /* border-bottom: 1px solid #ffffff; */
+}
+
+#menu_control:checked ~ .wrapper nav .hamburger {
+  left: 0;
 }
 
 /* ======導覽列====== */
@@ -21,10 +101,44 @@ nav {
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
-  height: 80px;
+  height: var(--nav-height);
   position: sticky; /*導覽列跟著視窗滑動*/
   top: 0;
   left: 0; /*定在視窗最上面*/
+  z-index: 5; /*讓banner不蓋住nav，且設到2可避免下面影評區塊的標題同層顯示*/
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: calc(var(--nav-height) - 20px); /*小於768時nav高度縮小20px*/
+  }
+
+  .hamburger {
+    top: calc(var(--nav-height) - 20px);
+    height: 100vh;
+  }
+
+  /*螢幕小於769px時，繼續隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
 }
 
 .nav_logo {
@@ -33,22 +147,67 @@ nav {
   margin-left: 65px;
 }
 
+@media screen and (max-width: 768px) {
+  .nav_logo {
+    margin-left: 10px; /*小於769時離左邊10px*/
+  }
+}
+
 nav .nav_logo img {
   height: 58px;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav_logo img {
+    height: 38px; /*小於768時LOGO縮小*/
+  }
 }
 
 nav .content {
   line-height: 80px; /*設定與nav高度一樣讓文字垂直置中*/
 }
 
+nav .content li:nth-child(2) a {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(231, 0, 140);
+}
+
 nav ul {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
 }
 
 nav ul li {
-  margin: 0 30px;
+  margin: 0 15px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  /*螢幕大於768小於等於993時，除了購買按鈕以外其他隱藏*/
+  nav ul li:nth-child(1) {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul li:nth-child(4) {
+    display: none;
+  }
+  nav ul li:nth-child(5) {
+    display: none;
+  }
+  .menu_btn {
+    display: block; /*漢堡選單出現*/
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu_btn {
+    display: block;
+    top: 10px; /*nav高度變60px時，漢堡top變10px置中*/
+  }
 }
 
 nav a {
@@ -58,21 +217,41 @@ nav a {
 
 ul .buy {
   /* display: block; 有吃到父層flex屬性所以不用再設block寫寬高*/
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
-  width: 282px;
-  height: 141px; /*高度為原來一半才會半圓*/
+  width: 232px;
+  height: 116px; /*高度為原來一半才會半圓*/
   text-align: center;
-  border-radius: 0 0 141px 141px; /*設定下半圓*/
+  border-radius: 0 0 116px 116px; /*設定下半圓*/
   box-shadow: 0 15px 15px rgba(255, 255, 255, 0.5); /*陰影設定垂直位移15px,擴散15px,顏色及透明度*/
   background-image: radial-gradient(
-    circle /* 90deg, */ 141px at 141px 0,
+    circle /* 90deg, */ 116px at 116px 0,
     #bc21c1 0%,
     #bc21c1 55%,
     #3f0041 100%
   );
   animation: shine 2s linear infinite; /*設置動畫*/
+}
+
+@media screen and (max-width: 768px) {
+  ul .buy {
+    width: 182px;
+    height: 90px;
+    font-size: 23px;
+    border-radius: 0 0 90px 90px;
+    background-image: radial-gradient(
+      circle /* 90deg, */ 90px at 90px 0,
+      #bc21c1 0%,
+      #bc21c1 55%,
+      #3f0041 100%
+    );
+  }
+  nav a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
 @keyframes shine {
@@ -99,6 +278,13 @@ main {
   margin-top: 141px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  main {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
 main .select {
   text-align: center;
   display: flex;
@@ -106,9 +292,9 @@ main .select {
 }
 
 main .select .btn_now {
-  width: 125px;
+  width: 130px;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0 52.5px;
   cursor: pointer;
@@ -122,9 +308,9 @@ main .select .btn_now:hover {
 }
 
 main .select .coming_soon {
-  width: 145px;
+  width: 130px;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0 52.5px;
   cursor: pointer;
@@ -137,24 +323,61 @@ main .select .coming_soon:hover {
   border-bottom: 2px solid #e7008c;
 }
 
+@media screen and (max-width: 576px) {
+  main .select .btn_now {
+    font-size: 16px;
+  }
+
+  main .select .coming_soon {
+    font-size: 16px;
+  }
+}
+
 .list {
-  width: 1032px;
-  height: 580px;
+  width: 1024px;
   margin: 0 auto;
   margin-top: 35px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .list {
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
 .list ul {
-  width: 1032px;
-  height: 580px;
+  width: 960px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .list ul {
+    padding: 0 20px;
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .list ul {
+    max-width: 640px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .list ul {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 
 .list ul li {
+  margin: 10px 10px;
   width: 300px;
   height: 100px;
   font-size: 18px;
@@ -166,6 +389,25 @@ main .select .coming_soon:hover {
   cursor: pointer;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .list ul li {
+    max-width: 260px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .list ul li {
+    max-width: 200px;
+    height: 80px;
+    line-height: 80px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list ul li {
+    width: 100%;
+  }
+}
 /* ======頁尾區塊====== */
 footer {
   width: 1200px;
@@ -175,10 +417,24 @@ footer {
   margin-top: 80px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  footer {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
 .main {
   margin: 0 auto;
   width: 1200px;
   display: flex;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .main {
+    max-width: 1200px;
+    width: 100%;
+  }
 }
 
 .main .pay {
@@ -189,55 +445,246 @@ footer {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-left: 50px;
 }
 
-footer img {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .main .pay {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .main .pay {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main .pay {
+    width: 100%;
+  }
+}
+
+footer .footer_logo {
   width: 176px;
+  margin-left: 50px;
+  z-index: 2; /*縮到最小時不會被absolute的download區塊覆蓋*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  footer .footer_logo {
+    max-width: 176px;
+    width: 100%;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  footer .footer_logo {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer .footer_logo {
+    max-width: 100px;
+    width: 100%;
+    margin-left: 20px; /*LOGO區塊離左邊間距*/
+  }
 }
 
 .credit_card {
   height: 130px;
   position: relative; /*底下圖片訂為基準*/
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .credit_card {
+    max-height: 130px;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card {
+    max-height: 110px;
+    height: 100%;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .credit_card {
+    max-height: 74px;
+    height: 100%;
+    margin-right: 20px; /*信用卡資訊區塊離右邊間距*/
+  }
 }
 
 .credit_card img {
   /*圖片設絕對定位靠下，計算距離靠最右*/
+  width: 176px;
   position: absolute;
-  left: 166px;
+  right: 0;
   bottom: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .credit_card img {
+    max-width: 176px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card img {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .credit_card img {
+    max-width: 90px;
+    width: 100%;
+  }
 }
 
 .credit_card p {
   width: 297px; /*設寬讓文字超過自動斷行*/
   font-size: 12px;
   color: #ffffff;
-  margin-left: 45px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .credit_card p {
+    max-width: 297px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .credit_card p {
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .credit_card p {
+    max-width: 170px;
+  }
 }
 
 .download {
   width: 579px;
   height: 300px;
-  overflow: hidden;
   position: relative; /*下載圖標定為基準*/
 }
 
-.download img {
-  width: 479px;
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .download {
+    max-width: 579px;
+    width: 100%;
+    margin-left: 35px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .download {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.download .download_logo {
+  position: absolute;
+  bottom: 0; /*背景圖定在最下方，縮放時就不會跑掉*/
+  left: 50%;
+  transform: translateX(-50%); /*背景置中*/
+  max-width: 450px;
+  width: 100%;
   opacity: 0.6; /*這裡設透明度會影響整個download的IMG*/
 }
 
-.download .appitem {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .download .download_logo {
+    max-width: 450px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download .download_logo {
+    max-width: 450px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /*手機LOGO置中*/
+  }
+}
+
+.download .applestore {
   position: absolute; /*圖片定位*/
-  width: 136px;
-  bottom: 35px;
-  right: 60px;
+  width: 120px;
+  bottom: 10px;
+  right: 200px;
   opacity: 1; /*這邊針對.appitem改回不透明*/
 }
 
 .download .google {
   position: absolute; /*圖片定位*/
-  width: 136px;
-  bottom: 35px;
-  right: 246px;
+  width: 120px;
+  bottom: 10px;
+  right: 50px;
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .download .applestore {
+    max-width: 120px;
+    width: 100%;
+  }
+
+  .download .google {
+    max-width: 120px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .download .applestore {
+    max-width: 110px;
+    width: 100%;
+  }
+
+  .download .google {
+    max-width: 110px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .download .applestore {
+    max-width: 100px;
+    width: 100%;
+    left: 25%; /*小於576px兩張圖分別再25%與75%位置*/
+    transform: translateX(-25%);
+  }
+
+  .download .google {
+    max-width: 100px;
+    width: 100%;
+    left: 75%; /*小於576px兩張圖分別再25%與75%位置*/
+    transform: translateX(-75%);
+  }
 }

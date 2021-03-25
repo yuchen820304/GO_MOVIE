@@ -168,6 +168,11 @@ nav .content {
   line-height: 80px; /*設定與nav高度一樣讓文字垂直置中*/
 }
 
+nav .content li:nth-child(5) a {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(231, 0, 140);
+}
+
 nav ul {
   font-size: 18px;
   display: flex;
@@ -271,34 +276,58 @@ ul .buy:hover {
   width: 1024px;
   margin: 0 auto;
   display: flex;
+  /* flex-wrap: wrap; */
   margin-top: 110px;
   justify-content: space-between;
-  overflow: hidden;
-  clear: both;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .infowrapper {
+    padding: 20px;
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .infowrapper {
+    padding: 20px;
+    max-width: 1024px;
+    width: 100%;
+    flex-direction: column; /*小於等於768時整個會員資訊欄位反轉成直的*/
+  }
 }
 
 .infowrapper .infobox {
-  line-height: 70px;
   display: flex;
-  width: 10%;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+  line-height: 70px;
+  position: relative;
 }
 
 .infobox .info {
   color: rgb(255, 255, 255);
-  font-weight: 300;
   letter-spacing: 1px;
   font-size: 18px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .infobox .info {
+    font-size: 14px;
+    width: 100%; /*個人資訊區塊設100%鉛筆icon就會斷行*/
+    line-height: 35px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .infobox .info {
+    font-size: 14px;
+    margin: 0 auto; /*反轉成直的後置中*/
+  }
+}
+
 .infowrapper .name {
   margin: 10px 1% 0px;
-}
-
-.infowrapper .email {
-}
-
-.infowrapper .birthday {
 }
 
 .infobox .editIcon {
@@ -310,7 +339,12 @@ ul .buy:hover {
   box-sizing: border-box;
   padding: 4px 3px;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .infobox .editIcon {
+    position: absolute;
+  }
 }
 
 .photo {
@@ -320,17 +354,39 @@ ul .buy:hover {
   background: 50% 50% / cover no-repeat;
 }
 
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .photo {
+    margin: 0 auto; /*反轉成直的後置中*/
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .photo {
+    margin-top: 10px;
+  }
+}
+
 .infowrapper .section {
   margin: 10px 1% 0px;
   letter-spacing: 1px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .infowrapper .section {
+    margin: 0 auto; /*反轉成直的後置中*/
+  }
+}
+
 .infowrapper .section .title {
-  font-size: 12px;
+  font-size: 16px;
   color: rgb(202, 202, 202);
-  text-align: left;
-  font-weight: 300;
-  height: 17px;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .infowrapper .section .title {
+    margin-top: 40px;
+  }
 }
 
 .infowrapper .section .content {
@@ -338,7 +394,6 @@ ul .buy:hover {
   color: rgb(255, 255, 255);
   text-align: left;
   margin: 10px 0px 0px;
-  height: 18px;
 }
 
 /* ======會員紀錄區塊====== */
@@ -347,16 +402,61 @@ ul .buy:hover {
   margin: 0 auto;
   display: flex;
   margin-top: 50px;
-  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .member_info {
+    padding: 0 20px;
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .member_info {
+    max-width: 640px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .member_info {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .title_box {
   width: 330px;
-  height: 260px;
+  padding: 20px;
   background-color: rgb(43, 43, 43);
+  border-radius: 10px;
+  margin: 5px;
 }
 
-.title {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .title_box {
+    max-width: 330px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .title_box {
+    max-width: 330px;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title_box {
+    width: 100%;
+    /* height: 300px; */
+  }
+}
+
+.title_box .title {
   width: 100%;
   padding: 10px;
   color: rgb(255, 255, 255);
@@ -398,7 +498,7 @@ ul .buy:hover {
   background-color: rgb(231, 0, 140);
   width: 94%;
   height: 40px;
-  line-height: 40px;
+  line-height: 38px;
   margin: 0 auto 10px;
   text-align: center;
   font-size: 18px;
@@ -407,6 +507,7 @@ ul .buy:hover {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(231, 0, 140);
   cursor: pointer;
+  outline: none;
 }
 
 .recordbox .poster {
@@ -418,13 +519,28 @@ ul .buy:hover {
   background-image: url(/img/poster.png);
 }
 
+/* @media screen and (min-width: 576px) and (max-width: 1200px) {
+  .recordbox .poster {
+    max-width: 134px;
+    width: 100%;
+  }
+} */
+
 .recordbox .record {
   float: left;
-  width: 50%;
-  height: 180px;
+  width: 100%;
   margin-left: 2%;
   box-sizing: border-box;
   padding: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .recordbox .record {
+    float: none;
+    width: 100%;
+  }
 }
 
 .recordbox .record .box {
@@ -437,10 +553,9 @@ ul .buy:hover {
   color: rgb(255, 255, 255);
   font-weight: 300;
   font-size: 16px;
-  margin-top: 20px;
   height: 20px;
-  overflow: hidden;
 }
+
 /* ======頁尾區塊====== */
 footer {
   width: 1200px;

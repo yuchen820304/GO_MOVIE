@@ -168,6 +168,11 @@ nav .content {
   line-height: 80px; /*設定與nav高度一樣讓文字垂直置中*/
 }
 
+nav .content li:nth-child(4) a {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(231, 0, 140);
+}
+
 nav ul {
   font-size: 18px;
   display: flex;
