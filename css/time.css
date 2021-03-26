@@ -271,42 +271,35 @@ ul .buy:hover {
   filter: brightness(1.2);
 }
 
-.banner {
+/* ======Swiper輪播======*/
+.swiper-container {
   height: 600px;
   overflow: hidden; /*超出上面設定高度隱藏*/
   position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
 }
 
-.banner img {
+.swiper-wrapper img {
   display: block;
   width: 1200px;
   position: absolute; /*設絕對定位再用座標設定顯示位置*/
-  top: -55px;
+  top: -20%;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
-  .banner {
+  .swiper-container {
     width: 100%;
   }
-  .banner img {
+  .swiper-wrapper img {
     min-width: 100%; /*最小寬100%，可以超過*/
-    position: relative; /*定位在50%的地方，從最左上開始算*/
-    top: -55px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .banner {
+  .swiper-wrapper {
     height: 580px;
   }
-  .banner img {
+  .swiper-wrapper img {
     min-width: 100%;
-    position: relative;
-    top: -75px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
