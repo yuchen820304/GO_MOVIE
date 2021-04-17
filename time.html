@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GO MOVIE</title>
   <link rel="stylesheet" href="./css/time.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -48,10 +49,21 @@
       </div>
     </nav>
 
-    <div class="banner">
-      <img src="./img/banner.jpg" alt="">
-    </div>
+    <!-- Swiper輪播 -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./img/GOZILA.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/Avengers.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/banner.jpg" alt=""></div>
 
+        <div <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- 電影時刻顯示區塊 -->
     <main>
@@ -173,6 +185,26 @@
           </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
 </body>
 
 </html>
