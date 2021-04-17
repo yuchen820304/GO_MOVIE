@@ -11,7 +11,7 @@ check.forEach(function (item, i) {
 
 let count = document.querySelectorAll('.count');
 count.forEach(function (item, i) {
-  count[i].addEventListener('click', function () {
+  count[i].addEventListener('blur', function () {
     if (count[i].classList.contains('checked')) {
       count[i].classList.remove('checked');
     } else {
