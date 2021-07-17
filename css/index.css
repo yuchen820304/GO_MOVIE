@@ -7,6 +7,7 @@
 body {
   font-family: Arial;
   line-height: 1.6;
+  background-color: #d5bca6;
 }
 
 :root {
@@ -14,7 +15,6 @@ body {
 }
 
 .wrapper {
-  background-color: #d5bca6;
   width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -91,13 +91,13 @@ body {
   /* border-bottom: 1px solid #ffffff; */
 }
 
-#menu_control:checked ~ .wrapper nav .hamburger {
+#menu_control:checked ~ nav .hamburger {
   left: 0;
 }
 
 /* ======導覽列====== */
 nav {
-  width: 1200px;
+  width: 100%;
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
@@ -268,34 +268,16 @@ ul .buy:hover {
 
 /* ======Swiper輪播======*/
 .swiper-container {
-  height: 600px;
-  overflow: hidden; /*超出上面設定高度隱藏*/
-  position: relative; /*讓下面IMG因absolute而超出範圍能回到原來隱藏大小*/
+  margin: 0 auto;
+  width: 100%;
+  max-height: 650px;
+  height: 100%;
 }
 
 .swiper-wrapper img {
   display: block;
-  width: 1200px;
-  position: absolute; /*設絕對定位再用座標設定顯示位置*/
-  top: -20%;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .swiper-container {
-    width: 100%;
-  }
-  .swiper-wrapper img {
-    min-width: 100%; /*最小寬100%，可以超過*/
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .swiper-wrapper {
-    height: 580px;
-  }
-  .swiper-wrapper img {
-    min-width: 100%;
-  }
+  max-width: 1200px;
+  width: 100%;
 }
 
 /* ======電影選擇區塊====== */
@@ -944,7 +926,7 @@ ul li .block {
 
 /* ======頁尾區塊====== */
 footer {
-  width: 1200px;
+  width: 100%;
   height: 300px;
   margin-top: 0;
   background-color: #5e8686;
@@ -960,7 +942,7 @@ footer {
 
 .main {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
   display: flex;
 }
 

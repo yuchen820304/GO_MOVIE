@@ -7,6 +7,7 @@
 body {
   font-family: Arial;
   line-height: 1.6;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 :root {
@@ -14,11 +15,13 @@ body {
 }
 
 .wrapper {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: 30px;
   position: relative;
   transition: all 0.3s;
+  padding-top: 110px;
+  padding-bottom: 80px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -91,13 +94,13 @@ body {
   /* border-bottom: 1px solid #ffffff; */
 }
 
-#menu_control:checked ~ .wrapper nav .hamburger {
+#menu_control:checked ~ nav .hamburger {
   left: 0;
 }
 
 /* ======導覽列====== */
 nav {
-  width: 1200px;
+  width: 100%;
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
@@ -277,7 +280,6 @@ ul .buy:hover {
   margin: 0 auto;
   display: flex;
   /* flex-wrap: wrap; */
-  margin-top: 110px;
   justify-content: space-between;
 }
 
@@ -558,11 +560,10 @@ ul .buy:hover {
 
 /* ======頁尾區塊====== */
 footer {
-  width: 1200px;
+  width: 100%;
   height: 300px;
   margin-top: 0;
   background-color: #5e8686;
-  margin-top: 80px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
@@ -574,7 +575,7 @@ footer {
 
 .main {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
   display: flex;
 }
 

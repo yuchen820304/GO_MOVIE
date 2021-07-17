@@ -14,41 +14,38 @@
   <!-- 漢堡選單遠端控制 -->
   <input type="checkbox" name="" id="menu_control">
 
+  <!-- 導覽列 -->
+  <nav>
+
+    <!-- 漢堡選單 -->
+    <label for="menu_control" class="menu_btn">
+      <span>選單</span>
+    </label>
+
+    <div class="hamburger">
+      <a href="./time.html">電影時刻</a>
+      <a href="./discount.html">優惠訊息</a>
+      <a href="./buy.html">立刻購票</a>
+      <a href="./article.html">影評文章</a>
+      <a href="./member.html">會員中心</a>
+    </div>
+
+    <a href="./index.html" class="nav_logo">
+      <img src="./img/LOGO.png" alt="">
+    </a>
+
+    <div class="content">
+      <ul>
+        <li><a href="./time.html">電影時刻</a></li>
+        <li><a href="./discount.html">優惠訊息</a></li>
+        <li class="buy"><a href="./buy.html">立刻購票</a></li>
+        <li><a href="./article.html">影評文章</a></li>
+        <li><a href="./member.html">會員中心</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="wrapper">
-
-
-
-    <!-- 導覽列 -->
-    <nav>
-
-      <!-- 漢堡選單 -->
-      <label for="menu_control" class="menu_btn">
-        <span>選單</span>
-      </label>
-
-      <div class="hamburger">
-        <a href="./time.html">電影時刻</a>
-        <a href="./discount.html">優惠訊息</a>
-        <a href="./buy.html">立刻購票</a>
-        <a href="./article.html">影評文章</a>
-        <a href="./member.html">會員中心</a>
-      </div>
-
-      <a href="./index.html" class="nav_logo">
-        <img src="./img/LOGO.png" alt="">
-      </a>
-
-      <div class="content">
-        <ul>
-          <li><a href="./time.html">電影時刻</a></li>
-          <li><a href="./discount.html">優惠訊息</a></li>
-          <li class="buy"><a href="./buy.html">立刻購票</a></li>
-          <li><a href="./article.html">影評文章</a></li>
-          <li><a href="./member.html">會員中心</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <!-- 電影選擇選單 -->
 
     <main>
@@ -61,47 +58,55 @@
         <h2>訂票排行榜</h2>
         <div class="items">
           <div class="list up">
-            <div class="movie_pic left">
-              <img src="./img/BOSS_LEVEL.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>迴路追殺令</h2>
-              <p>BODD LEVEL</p>
-              <div class="grade">輔15級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic left">
+                <img src="./img/BOSS_LEVEL.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>迴路追殺令</h2>
+                <p>BODD LEVEL</p>
+                <div class="grade">輔15級</div>
+              </div>
+            </a>
           </div>
 
           <div class="list down">
-            <div class="movie_pic left">
-              <img src="./img/GATAO.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>角頭-浪流連</h2>
-              <p>The Last Stray</p>
-              <div class="grade">輔15級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic left">
+                <img src="./img/GATAO.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>角頭-浪流連</h2>
+                <p>The Last Stray</p>
+                <div class="grade">輔15級</div>
+              </div>
+            </a>
           </div>
 
           <div class="list up">
-            <div class="movie_pic right">
-              <img src="./img/I_MISSED_YOU.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>我沒有談的那場戀愛</h2>
-              <p>I MISSED YOU</p>
-              <div class="grade">普遍級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic right">
+                <img src="./img/I_MISSED_YOU.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>我沒有談的那場戀愛</h2>
+                <p>I MISSED YOU</p>
+                <div class="grade">普遍級</div>
+              </div>
+            </a>
           </div>
 
-          <div class="list down ">
-            <div class="movie_pic right">
-              <img src="./img/I_Care_A_Lot.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>詐欺女王</h2>
-              <p>I CARE A LOT</p>
-              <div class="grade">輔15級</div>
-            </div>
+          <div class="list down">
+            <a href="./buy_select.html">
+              <div class="movie_pic right">
+                <img src="./img/I_Care_A_Lot.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>詐欺女王</h2>
+                <p>I CARE A LOT</p>
+                <div class="grade">輔15級</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -110,14 +115,16 @@
       <div class="menu">
         <div class="items">
           <div class="list up">
-            <div class="movie_pic left">
-              <img src="./img/Kingsman.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>金牌特務：機密對決</h2>
-              <p>Kingsman: The Golden Circle</p>
-              <div class="grade">輔15級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic left">
+                <img src="./img/Kingsman.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>金牌特務：機密對決</h2>
+                <p>Kingsman: The Golden Circle</p>
+                <div class="grade">輔15級</div>
+              </div>
+            </a>
           </div>
 
           <div class="list down">
@@ -134,25 +141,29 @@
           </div>
 
           <div class="list up">
-            <div class="movie_pic right">
-              <img src="./img/Twist.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>偷天行動</h2>
-              <p>Twist</p>
-              <div class="grade">保護級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic right">
+                <img src="./img/Twist.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>偷天行動</h2>
+                <p>Twist</p>
+                <div class="grade">保護級</div>
+              </div>
+            </a>
           </div>
 
           <div class="list down ">
-            <div class="movie_pic right">
-              <img src="./img/SOUL.jpg" alt="">
-            </div>
-            <div class="name">
-              <h2>靈魂急轉彎</h2>
-              <p>Soul</p>
-              <div class="grade">普遍級</div>
-            </div>
+            <a href="./buy_select.html">
+              <div class="movie_pic right">
+                <img src="./img/SOUL.jpg" alt="">
+              </div>
+              <div class="name">
+                <h2>靈魂急轉彎</h2>
+                <p>Soul</p>
+                <div class="grade">普遍級</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -174,24 +185,24 @@
         </ul>
       </div>
     </main>
-
-    <!-- 頁尾區塊 -->
-    <footer>
-      <div class="main">
-        <div class="pay">
-          <img class="footer_logo" src="./img/LOGO.png" alt="">
-          <div class="credit_card">
-            <p>GO MOVIE採用先進的TLS傳輸加密機制，資料傳輸皆經加密處理，以確保您於使用本服務資料傳輸之安全。</p>
-            <img src="https://www.ecpay.com.tw/Content/themes/Intro/creditcard/images/events/card_icon.svg" alt="">
-          </div>
-          <div class="download">
-            <img class="download_logo" src="./img/APP.png" alt="">
-            <img class="applestore" src="./img/APPLESTORE.png" alt="">
-            <img class="appitem google" src="./img/GOOGLEPLAY.png" alt="">
-          </div>
-        </div>
-    </footer>
   </div>
+
+  <!-- 頁尾區塊 -->
+  <footer>
+    <div class="main">
+      <div class="pay">
+        <img class="footer_logo" src="./img/LOGO.png" alt="">
+        <div class="credit_card">
+          <p>GO MOVIE採用先進的TLS傳輸加密機制，資料傳輸皆經加密處理，以確保您於使用本服務資料傳輸之安全。</p>
+          <img src="https://www.ecpay.com.tw/Content/themes/Intro/creditcard/images/events/card_icon.svg" alt="">
+        </div>
+        <div class="download">
+          <img class="download_logo" src="./img/APP.png" alt="">
+          <img class="applestore" src="./img/APPLESTORE.png" alt="">
+          <img class="appitem google" src="./img/GOOGLEPLAY.png" alt="">
+        </div>
+      </div>
+  </footer>
 </body>
 
 </html>

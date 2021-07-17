@@ -7,6 +7,7 @@
 body {
   font-family: Arial;
   line-height: 1.6;
+  background-color: #d5bca6;
 }
 
 :root {
@@ -91,13 +92,13 @@ body {
   /* border-bottom: 1px solid #ffffff; */
 }
 
-#menu_control:checked ~ .wrapper nav .hamburger {
+#menu_control:checked ~ nav .hamburger {
   left: 0;
 }
 
 /* ======導覽列====== */
 nav {
-  width: 1200px;
+  width: 100%;
   background: rgba(0, 0, 0, 0.7); /*此寫法可不讓子層跟著繼承透明度*/
   color: #ffffff;
   font-size: 0;
@@ -410,7 +411,7 @@ main .select .coming_soon:hover {
 }
 /* ======頁尾區塊====== */
 footer {
-  width: 1200px;
+  width: 100%;
   height: 300px;
   margin-top: 0;
   background-color: #5e8686;
@@ -426,7 +427,7 @@ footer {
 
 .main {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
   display: flex;
 }
 
