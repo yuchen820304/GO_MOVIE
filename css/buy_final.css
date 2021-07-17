@@ -456,6 +456,12 @@ main {
   color: #ffffff;
 }
 
+@media screen and (max-width: 576px){
+  .next .btn {
+    width: 140px;
+  }
+}
+
 .next .btn:hover {
   transition: all 0.2s;
   background-color: #e7008c;
