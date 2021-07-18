@@ -235,6 +235,13 @@ ul .buy {
   animation: shine 2s linear infinite; /*設置動畫*/
 }
 
+nav .buy a {
+  display: block;
+  width: 232px;
+  height: 116px;
+  border-radius: 0 0 116px 116px;
+}
+
 @media screen and (max-width: 768px) {
   ul .buy {
     width: 182px;
