@@ -289,6 +289,8 @@ main {
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
   .buy_information {
+    max-width: 1024px;
+    width: 100%;
     padding: 180px 5% 0;
   }
 }
