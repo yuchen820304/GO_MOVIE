@@ -4,6 +4,9 @@ check.forEach(function (item, i) {
     if (check[i].classList.contains('checked')) {
       check[i].classList.remove('checked');
     } else {
+      check.forEach(function (item, i){
+        check[i].classList.remove('checked');
+      }
       check[i].classList.add('checked');
     }
   });
