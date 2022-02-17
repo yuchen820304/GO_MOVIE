@@ -31,7 +31,7 @@ selectDate.forEach(function (item, i) {
 });
 
 // 電影播放類型選擇
-let type = document.querySelectorAll('.type');
+let type = document.getElementById('chooseKind').querySelectorAll('.type');
 let line = document.querySelector('.line');
 
 //預設數位先選取
