@@ -264,7 +264,6 @@ ul .buy:hover {
 /*======日期選擇區塊======*/
 main {
   width: 100%;
-  margin: 0 auto;
   margin-bottom: 30px;
   padding-bottom: 80px;
 }
@@ -277,24 +276,31 @@ main {
 }
 
 .buy_information {
-  width: 1024px;
-  margin: 0 auto;
+  width: 100%;
   padding-top: 180px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buy_information .current {
   font-family: 'Times New Roman', Times, serif;
-  width: 200px;
-  color: #ffffff;
+  width: 100px;
+  color: #FFFFFF;
   text-align: center;
   border-left: 1px solid #e7008c;
-  margin: 10px 0;
+}
+
+.buy_information :first-child {
+  font-family: 'Times New Roman', Times, serif;
+  width: 200px;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 1px solid #e7008c;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
   .buy_information {
-    max-width: 1024px;
     width: 100%;
     padding: 180px 5% 0;
   }
@@ -312,20 +318,11 @@ main {
 }
 
 .date {
-  width: 1024px;
-  margin: 0 auto;
   padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  .date {
-    max-width: 1024px;
-    width: 100%;
-  }
 }
 
 .date .box {
@@ -361,7 +358,6 @@ main {
 .box .month {
   height: 60px;
   line-height: 70px;
-  /* color: #ffffff; */
   font-size: 2rem;
   text-align: center;
 }
