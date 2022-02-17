@@ -282,11 +282,11 @@ ul .buy:hover{
   overflow: hidden;
 }
 
-/* .swiper-wrapper img {
-  display: block;
-  max-width: 1920px;
+.swiper-wrapper img {/*輪播圖縮放*/
+  /* display: block; */
+  /* max-width: 1920px; */
   width: 100%;
-} */
+}
 
 /* ======電影選擇區塊====== */
 main {
