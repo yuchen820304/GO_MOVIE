@@ -8,6 +8,7 @@ body {
   font-family: Arial;
   line-height: 1.6;
   background-color: rgba(0, 0, 0, 0.7);
+  user-select: none;
 }
 
 :root {
@@ -291,6 +292,16 @@ main {
   width: 1024px;
   margin: 0 auto;
   padding-top: 180px;
+  display: flex;
+}
+
+.buy_information .current {
+  font-family: 'Times New Roman', Times, serif;
+  width: 200px;
+  color: #ffffff;
+  text-align: center;
+  border-left: 1px solid #e7008c;
+  margin: 10px 0;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
@@ -330,41 +341,48 @@ main {
 }
 
 .date .box {
+  font-family: 'Times New Roman', Times, serif;
   width: 90px;
   height: 90px;
-  border: 1px solid #ffffff;
+  border: 1px solid transparent;
   border-radius: 50px;
   margin: 10px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .date .box:hover {
-  background-color: #e7008c;
+  cursor: pointer;
+  border: 1px solid #e7008c;
+  color:#FFFFFF;
 }
 
 .date .box.checked {
+  transition: .1s;
   background-color: #e7008c;
+  color:#FFFFFF;
 }
 
 .box .day {
   height: 20px;
   line-height: 60px;
-  color: #ffffff;
-  font-size: 12px;
+  /* color: #ffffff; */
+  font-size: 0.75rem;
   text-align: center;
 }
 
 .box .month {
   height: 60px;
   line-height: 70px;
-  color: #ffffff;
-  font-size: 24px;
+  /* color: #ffffff; */
+  font-size: 2rem;
   text-align: center;
 }
 
 /* ======時間區塊====== */
 .time_block {
   width: 1024px;
-  margin: 0 auto;
+  margin: 60px auto 0;
+  position: relative;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
@@ -376,22 +394,113 @@ main {
 }
 
 .time_block .kind {
-  display: flex;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 16px;
-  margin-top: 20px;
+  position: absolute;/*這邊用絕對定位就不會讓選取時出現的底線因本身高度而推擠下方區塊*/
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0;/*透過文字大小0取消inline-block間隙*/
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px){
+  .time_block .kind{
+    max-width: 450px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px){
+  .time_block .kind{
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .time_block .kind{
+    max-width: 240px;
+    width: 100%;
+  }
 }
 
 .kind .type {
-  width: 130px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;/*將文字大小設定回來*/
+  display: inline-block;
+  margin: 0 auto;
+  width: 150px;
   height: 30px;
   text-align: center;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgb(43, 43, 43);
+}
+
+@media screen and (min-width: 576px) and (max-width: 1200px){
+  .kind .type{
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px){
+  .kind .type{
+    max-width: 100px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .kind .type{
+    max-width: 80px;
+    width: 100%;
+  }
 }
 
 .kind .type:hover {
-  border-bottom: 2px solid #e7008c;
+  cursor: pointer;
+  transition: .3s;/*在RWD解析度切換時會因為動畫導致跳動感*/
+  /* border-bottom: 2px solid #e7008c; */
+  color: #ffffff;
+}
+
+.kind .type.checked {
+  color: #ffffff;
+}
+
+.kind .linebox{
+  width: 100%;
+  margin: -4px auto;
+  z-index: 300;
+}
+
+.kind .linebox .line {
+  width: 150px;
+  height: 6px;
+  background-color: rgb(231, 0, 140);
+  z-index: 300;
+  transition: all 0.3s ease 0s;
+  transform: translateX(0%);
+}
+
+@media screen and (min-width: 576px) and (max-width: 1200px){
+  .kind .linebox .line{
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px){
+  .kind .linebox .line{
+    max-width: 100px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .kind .linebox .line{
+    max-width: 80px;
+    width: 100%;
+  }
 }
 
 .time_block .time_bar {
@@ -402,28 +511,32 @@ main {
 }
 
 .time_bar .box {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
   width: 90px;
   height: 90px;
   text-align: center;
   line-height: 90px;
   border-radius: 50%;
-  border: 1px solid #ffffff;
+  border: 1px solid transparent;
   margin: 10px 20px;
   color: #ffffff;
 }
 
 .time_bar .box:hover {
-  background-color: #e7008c;
+  cursor: pointer;
+  border: 1px solid #e7008c;
 }
 
 .time_bar .box.checked {
+  transition: .1s;
   background-color: #e7008c;
 }
 
 /* ======人數區塊====== */
 .people_block {
   width: 1024px;
-  margin: 0 auto;
+  margin: 60px auto 0;
   text-align: center;
 }
 
@@ -438,7 +551,6 @@ main {
   display: inline-block;
   color: #ffffff;
   font-size: 16px;
-  margin-top: 20px;
 }
 
 .people .type {
@@ -449,7 +561,7 @@ main {
   border-bottom: 1px solid transparent;
 }
 
-.people .type:hover {
+.people .type {
   border-bottom: 2px solid #e7008c;
 }
 
@@ -461,22 +573,27 @@ main {
 }
 
 .box_people .count {
+  font-family: 'Times New Roman', Times, serif;
   width: 45px;
   height: 45px;
   text-align: center;
   line-height: 45px;
   border-radius: 50%;
-  border: 1px solid #ffffff;
+  border: 1px solid transparent;
   margin: 10px 10px;
   color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .people_bar .box_people .count:hover {
-  background-color: #e7008c;
+  cursor: pointer;
+  transform: scale(1.3);
 }
 
 .people_bar .box_people .count.checked {
+  transition: .1s;
   background-color: #e7008c;
+  transform: scale(1.3);
 }
 
 main a {
@@ -484,11 +601,12 @@ main a {
   width: 100px;
   height: 40px;
   line-height: 40px;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, .4);
   color: #ffffff;
   text-align: center;
   text-decoration: none;
   margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
 /* ======頁尾區塊====== */

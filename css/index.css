@@ -274,17 +274,19 @@ ul .buy:hover{
 
 /* ======Swiper輪播======*/
 .swiper-container {
-  margin: 0 auto;
-  width: 100%;
-  max-height: 1080px;
-  height: 100%;
+  /* margin: 0 auto; */
+  /* width: 100%; */
+  /* max-height: 1080px; */
+  /* height: 100%; */
+  position: relative;/*輪播箭頭定位*/
+  overflow: hidden;
 }
 
-.swiper-wrapper img {
+/* .swiper-wrapper img {
   display: block;
   max-width: 1920px;
   width: 100%;
-}
+} */
 
 /* ======電影選擇區塊====== */
 main {
