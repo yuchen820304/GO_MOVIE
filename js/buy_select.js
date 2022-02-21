@@ -1,8 +1,15 @@
-let info = []; //選擇資訊
+let info = {
+  month: '',
+  type: '',
+  time: '',
+  count: '',
+};
+//選擇資訊
 let innerMonth = document.getElementById('selectDay');
 let innerTime = document.getElementById('selectTime');
 let innerCount = document.getElementById('selectCount');
 let innerType = document.getElementById('selectType');
+let storage = localStorage;
 
 // 日期選擇
 let selectDate = document.getElementById('DateBlock').querySelectorAll('.box'); //取得id為DateBlock下class為box的元素，若單純只寫document.querySelectorAll('.box')，時間選擇區塊叫box的class就會被取得，兩區塊選項會互相取消。
@@ -12,20 +19,22 @@ selectDate.forEach(function (item, i) {
       selectDate[i].classList.remove('checked'); //已選取時再點擊取消選取
       innerMonth.classList.remove('current'); //移除該欄位current的class移除CSS樣式
       innerMonth.innerHTML = ''; //資訊欄清空
-      info.splice(0);
-      // console.log(info);
+      info.month = '';
+      storage.setItem('info', JSON.stringify(info)); //清除localStorage的month
     } else {
       selectDate.forEach(item => {
         //點擊時讓所有選項取消選取
         item.classList.remove('checked');
-        info.splice(0);
+        // info.splice(0);
       });
       selectDate[i].classList.add('checked'); //再讓被點擊的那個選項被選取
       let choose = document.getElementsByClassName('month')[i].innerText; //取得所選日期標籤內容
       let day = document.getElementsByClassName('day')[i].innerText; //取得所選星期幾標籤內容
-      info.push(choose, day);
+      info.month = choose;
+      console.log(info);
       innerMonth.innerHTML = choose + ' ' + day; //在標籤新增所選中的選項文字
       innerMonth.classList.add('current'); //在標籤新增class:current套上CSS
+      storage.setItem('info', JSON.stringify(info)); //加到localStorage
     }
   });
 });
@@ -48,12 +57,16 @@ type.forEach(function (item, i) {
       line.style.display = 'none';
       innerType.classList.remove('current'); //移除該欄位current的class移除CSS樣式
       innerType.innerHTML = ''; //資訊欄清空
+      info.type = '';
+      storage.setItem('info', JSON.stringify(info)); //清除localStorage的type
     } else {
       type.forEach(item => {
         item.classList.remove('checked'); //點擊時讓所有選項取消選取
       });
       type[i].classList.add('checked'); //再讓被點擊的那個選項被選取
       let typeSelected = document.getElementsByClassName('type')[i].innerText; //取得所選類型標籤內容
+      info.type = typeSelected;
+      storage.setItem('info', JSON.stringify(info));
 
       switch (typeSelected) {
         case '數位':
@@ -85,17 +98,18 @@ selectTime.forEach(function (item, i) {
       selectTime[i].classList.remove('checked');
       innerTime.classList.remove('current');
       innerTime.innerHTML = '';
-      info.splice(2, 1);
+      info.time = '';
+      storage.setItem('info', JSON.stringify(info));
     } else {
       selectTime.forEach(item => {
         item.classList.remove('checked');
-        info.splice(2, 1);
       });
       selectTime[i].classList.add('checked');
       let time = document.getElementsByClassName('time')[i].innerText;
-      info.push(time);
       innerTime.innerHTML = time;
       innerTime.classList.add('current');
+      info.time = time;
+      storage.setItem('info', JSON.stringify(info));
     }
   });
 });
@@ -108,6 +122,8 @@ count.forEach(function (item, i) {
       count[i].classList.remove('checked');
       innerCount.classList.remove('current');
       innerCount.innerHTML = '';
+      info.count = '';
+      storage.setItem('info', JSON.stringify(info));
     } else {
       count.forEach(item => {
         item.classList.remove('checked');
@@ -116,6 +132,8 @@ count.forEach(function (item, i) {
       let person = document.getElementsByClassName('count')[i].innerText;
       innerCount.innerHTML = person + '人';
       innerCount.classList.add('current');
+      info.count = person;
+      storage.setItem('info', JSON.stringify(info));
     }
   });
 });

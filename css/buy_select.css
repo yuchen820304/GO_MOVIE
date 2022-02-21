@@ -1,3 +1,5 @@
+.date_bar,.time_block,.people_block{user-select: none;}
+
 /*======日期選擇區塊======*/
 main {
   width: 100%;
