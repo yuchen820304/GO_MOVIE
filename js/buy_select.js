@@ -1,15 +1,22 @@
+// 設定空物件，重整或重新進入購票頁面時，因localStorage是儲存info內容，所以會自動清空
 let info = {
   month: '',
   type: '',
   time: '',
   count: '',
 };
+
 //選擇資訊
+let innerName = document.getElementById('movieName');
 let innerMonth = document.getElementById('selectDay');
 let innerTime = document.getElementById('selectTime');
 let innerCount = document.getElementById('selectCount');
 let innerType = document.getElementById('selectType');
 let storage = localStorage;
+let next = document.getElementById('next');
+
+// 片名
+innerName.innerHTML = storage.getItem('name');
 
 // 日期選擇
 let selectDate = document.getElementById('DateBlock').querySelectorAll('.box'); //取得id為DateBlock下class為box的元素，若單純只寫document.querySelectorAll('.box')，時間選擇區塊叫box的class就會被取得，兩區塊選項會互相取消。
@@ -20,21 +27,19 @@ selectDate.forEach(function (item, i) {
       innerMonth.classList.remove('current'); //移除該欄位current的class移除CSS樣式
       innerMonth.innerHTML = ''; //資訊欄清空
       info.month = '';
-      storage.setItem('info', JSON.stringify(info)); //清除localStorage的month
+      storage.setItem('info', JSON.stringify(info)); //將info物件轉成字串清除localStorage的month
     } else {
       selectDate.forEach(item => {
         //點擊時讓所有選項取消選取
         item.classList.remove('checked');
-        // info.splice(0);
       });
       selectDate[i].classList.add('checked'); //再讓被點擊的那個選項被選取
       let choose = document.getElementsByClassName('month')[i].innerText; //取得所選日期標籤內容
       let day = document.getElementsByClassName('day')[i].innerText; //取得所選星期幾標籤內容
       info.month = choose;
-      console.log(info);
       innerMonth.innerHTML = choose + ' ' + day; //在標籤新增所選中的選項文字
       innerMonth.classList.add('current'); //在標籤新增class:current套上CSS
-      storage.setItem('info', JSON.stringify(info)); //加到localStorage
+      storage.setItem('info', JSON.stringify(info)); //將info物件轉成字串加到localStorage
     }
   });
 });
@@ -48,6 +53,8 @@ let typeSelected = document.getElementsByClassName('type')[0].innerText;
 type[0].classList.add('checked');
 innerType.classList.add('current');
 innerType.innerHTML = typeSelected;
+info.type = typeSelected;
+storage.setItem('info', JSON.stringify(info));
 
 type.forEach(function (item, i) {
   type[i].addEventListener('click', function () {
@@ -135,5 +142,25 @@ count.forEach(function (item, i) {
       info.count = person;
       storage.setItem('info', JSON.stringify(info));
     }
+    for (item in info) {
+      // console.log(info[item]);
+    }
   });
+});
+
+next.addEventListener('click', function (e) {
+  let item = JSON.parse(storage.getItem('info'));
+  if (item.month == '') {
+    e.preventDefault();
+    alert('請選擇日期');
+  } else if (item.type == '') {
+    e.preventDefault();
+    alert('請選擇電影種類');
+  } else if (item.time == '') {
+    e.preventDefault();
+    alert('請選擇電影時間');
+  } else if (item.count == '') {
+    e.preventDefault();
+    alert('請選擇人數');
+  }
 });

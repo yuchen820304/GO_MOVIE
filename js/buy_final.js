@@ -1,7 +1,11 @@
 let seat = document.querySelectorAll('.my_seat');
 let checked = 0;
-let btn1 = document.getElementById('reset');
+let selected = document.getElementsByClassName('reset')[0];
+let pay = document.getElementsByClassName('payment')[0];
 let storage = localStorage;
+
+let name = (document.getElementById('name').innerHTML =
+  storage.getItem('name'));
 
 let date = (document.getElementById('date').innerHTML = JSON.parse(
   storage.getItem('info'),
@@ -19,6 +23,7 @@ let count = (document.getElementById('count').innerHTML = JSON.parse(
   storage.getItem('info'),
 ).count);
 
+// 座位選擇數判斷
 seat.forEach(function (item, i) {
   seat[i].addEventListener('click', function () {
     if (seat[i].classList.contains('checked')) {
@@ -38,6 +43,13 @@ seat.forEach(function (item, i) {
   });
 });
 
-btn1.addEventListener('click', function () {
-  storage.clear();
+pay.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (checked < count) {
+    alert('幹還有' + (count - checked) + '位沒選啦87');
+  }
 });
+
+// selected.addEventListener('click', function () {
+// storage.clear();
+// });

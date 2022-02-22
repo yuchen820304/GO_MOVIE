@@ -158,9 +158,9 @@ main {
 
 @media screen and (min-width: 576px) and (max-width: 1200px) {
   .my_seat {
-    width: 1.5vw;
-    height: 1.5vw;
-    margin: 0.35vw;
+    width: 3vw;
+    height: 3vw;
+    margin: 0.4vw;
   }
 }
 
@@ -168,7 +168,7 @@ main {
   .my_seat {
     width: 5vw;
     height: 5vw;
-    margin: 0.3vw;
+    margin: 0.8vw;
   }
 }
 
@@ -177,6 +177,7 @@ main {
 }
 
 .next {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 30px;
@@ -185,10 +186,8 @@ main {
 
 .next a {
   text-decoration: none;
-}
-
-.next .btn {
-  width: 220px;
+  max-width: 220px;
+  width: 100%;
   height: 30px;
   line-height: 30px;
   background-color: #9e9e9e;
@@ -197,11 +196,21 @@ main {
   box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
-@media screen and (max-width: 576px){
+.next .btn {
+  
+}
+
+/* @media screen and (min-width: 576px) and (max-width:768px){
+  .next .btn {
+    width: 180px;
+  }
+} */
+
+/* @media screen and (max-width: 576px){
   .next .btn {
     width: 140px;
   }
-}
+} */
 
 .next .btn:hover {
   transition: all 0.2s;
