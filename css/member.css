@@ -253,7 +253,6 @@ nav .content li:nth-child(5) a {
   width: 134px;
   height: 180px;
   background: 50% 50% / cover no-repeat rgb(63, 63, 63);
-  background-image: url(/img/poster.png);
 }
 
 /* @media screen and (min-width: 576px) and (max-width: 1200px) {
