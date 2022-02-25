@@ -37,7 +37,6 @@ main .btn_now {
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
-  cursor: pointer;
   border-bottom: 2px solid #e7008c;
   text-shadow: 0 3px 6px #000000;
 }

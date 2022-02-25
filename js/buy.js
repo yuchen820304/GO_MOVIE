@@ -4,7 +4,6 @@ let storage = localStorage;
 
 list.forEach(function (item, i) {
   list[i].addEventListener('click', function (e) {
-    // e.preventDefault();
     storage.setItem('name', movieName[i].innerText);
   });
 });

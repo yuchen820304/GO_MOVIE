@@ -3,7 +3,6 @@ let seat = document.querySelectorAll('.my_seat');
 let selected = document.getElementsByClassName('reset')[0];
 let pay = document.getElementsByClassName('payment')[0];
 let storage = localStorage;
-// let seatArr = []; //已選座位陣列
 let checkedCount = document.querySelectorAll('.checked'); //取得所有已選取的座位
 let seatArr = Array.prototype.slice.call(checkedCount); //querySelectorAll出來是類陣列無法使用JS陣列方法，因此轉成陣列
 
@@ -63,7 +62,3 @@ pay.addEventListener('click', function (e) {
     alert('幹都沒選是要跟鬼看逆');
   }
 });
-
-// selected.addEventListener('click', function () {
-// storage.clear();
-// });

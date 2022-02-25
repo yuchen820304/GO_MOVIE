@@ -106,6 +106,7 @@ main ul {
 
 main ul li {
   font-size: 0; /*取消li圖片底下空白*/
+  overflow: hidden;
 }
 
 main li:hover img {
@@ -261,6 +262,10 @@ main ul .r_shadow {
   }
 }
 
+main li img{
+  width: 100%; 
+ }
+
 main .small {
   /*小圖尺寸*/
   width: 130px;
@@ -336,10 +341,6 @@ main .large {
     overflow: hidden;
     box-shadow: 0 15px 8px rgba(0, 0, 0, 0.3);/*上面overflow設定會蓋住陰影這裡加回*/
   }
-
-  /* main li img{
-    
-  } */
 
   main li .rwd_img {
     position: absolute;
@@ -479,6 +480,7 @@ h2 {
   font-size: 0;
   overflow: hidden; /*下面hover動畫放大時超出範圍隱藏*/
   position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
 .left:hover {
@@ -600,6 +602,7 @@ ul li .block {
   width: 256px;
   overflow: hidden;
   font-size: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
 .right li a {
@@ -615,6 +618,13 @@ ul li .block {
   text-decoration: none;
   color: #ffffff;
   font-size: 16px;
+  margin-top: 10px;
+  text-shadow: 0 2px 5px rgb(0 0 0);
+}
+
+.right li p {
+  padding-left: 5px;
+  text-shadow: 0 2px 5px rgb(0 0 0);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
