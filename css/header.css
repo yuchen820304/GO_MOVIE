@@ -165,13 +165,35 @@ nav .content {
 } */
 
 nav ul {
+  width: 1024px;
+  margin: 0 auto;
   font-size: 18px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+ 
+@media screen and (max-width: 1380px) {
+  nav ul{
+    width: 760px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  nav ul{
+    width: 680px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul{
+    width: 100%;
+  }
 }
 
 nav ul li {
-  margin: 0 15px;
+  /* margin: 0 10px; */
+  width: 90px;
+  text-align: center;
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -204,6 +226,8 @@ nav ul li {
 nav a {
   text-decoration: none;
   color: #ffffff;
+  display: block;
+  height: 60px;
 }
 
 ul .buy {

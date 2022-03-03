@@ -142,15 +142,26 @@ count.forEach(function (item, i) {
       info.count = person;
       storage.setItem('info', JSON.stringify(info));
     }
-    for (item in info) {
-      // console.log(info[item]);
-    }
   });
 });
 
 next.addEventListener('click', function (e) {
   let item = JSON.parse(storage.getItem('info'));
-  if (item.month == '') {
+  let getName = storage.getItem('name');
+  let content = storage.length;
+  if (content == 0) {
+    window.location.reload(); //若被手動清除localStorage畫面重整回到預設
+    e.preventDefault();
+    alert('無任何資料');
+  } else if (item == null) {
+    window.location.reload(); //若被手動清除localStorage的info則畫面重整
+    e.preventDefault();
+    alert('無訂位資訊');
+  } else if (getName == null) {
+    window.location.reload(); //若被手動清除localStorage的name則畫面重整
+    e.preventDefault();
+    alert('無片名資訊');
+  } else if (item.month == '') {
     e.preventDefault();
     alert('請選擇日期');
   } else if (item.type == '') {

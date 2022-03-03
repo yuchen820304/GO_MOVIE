@@ -57,8 +57,8 @@ pay.addEventListener('click', function (e) {
   e.preventDefault();
   console.log(seatArr);
   if (seatArr.length < count && seatArr.length > 0) {
-    alert('幹還有' + (count - seatArr.length) + '位沒選啦87');
+    alert('還有' + (count - seatArr.length) + '位未選擇座位');
   } else if (seatArr.length == 0) {
-    alert('幹都沒選是要跟鬼看逆');
+    alert('請選擇座位!');
   }
 });
